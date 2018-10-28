@@ -1,0 +1,938 @@
+﻿
+@{
+    ViewBag.Title = "ResultAdvancedStage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //if (Session["resultValueAdjustmentFactors"] == null)
+    //{
+    //    Response.Redirect("~/Home/Index");
+    //}
+}
+
+
+
+
+<div class="jumbotron-m">
+    <header>
+        <h2><b>FINAL ESTIMATIONS (@Session["Stage"])</b></h2>
+
+    </header>
+
+    <br />
+    <br />
+
+    <h3><b>SDLC Level:</b> After design completion</h3>
+
+
+    
+    <h4 class="text-center"><b class="text-center"> FUNCTION POINT &nbsp &nbsp   </b> @Session["resultFunctionPoints"]</h4>
+    <h4 class="text-center"><b class="text-center"> SIZE &nbsp &nbsp   </b> @Session["resultSize"] <i class="text-small text-center"> KLOC</i></h4>
+
+
+
+
+    <br />
+
+
+
+    <div class="row">
+        <div class="col-md-6">
+
+
+            <table class="table table-responsive table-borderless">
+
+
+
+                <tr>
+                    <th><h4> TOTAL EFFORT</h4></th>
+                    <td>@Session["resultEffort"] <i class="text-small"> person-month</i></td>
+
+
+                </tr>
+
+
+
+                <tr class="text-small">
+                    <td>At requirements planning <br /> and product design</td>
+                    <td>@Session["resultEffortRPD"] <i class="text-small"> person-month</i></td>
+
+                </tr>
+                <tr class="text-small">
+
+                    <td>At detailed design</td>
+                    <td>@Session["resultEffortDD"]<i class="text-small"> person-month</i></td>
+
+                </tr>
+                <tr class="text-small">
+
+                    <td>At code and unit test</td>
+                    <td>@Session["resultEffortCUT"]<i class="text-small"> person-month</i></td>
+
+                </tr>
+                <tr class="text-small">
+
+                    <td>At integration and test</td>
+                    <td>@Session["resultEffortIT"]<i class="text-small"> person-month</i></td>
+                </tr>
+
+
+            </table>
+
+
+
+        </div>
+
+
+        <div class="col-md-6">
+
+            <table class="table table-responsive table-borderless">
+
+
+
+                <tr>
+
+                    <th><h4> TOTAL DEVELOPMENT TIME </h4></th>
+                    <td>@Session["resultDevelopmentTime"] <i class="text-small"> months </i></td>
+
+
+                </tr>
+
+
+
+                <tr class="text-small">
+                    <td>At requirements planning <br /> and product design</td>
+                    <td>@Session["resultDevelopmentTimeRPD"] <i class="text-small"> month</i></td>
+
+                </tr>
+                <tr class="text-small">
+
+                    <td>At detailed design</td>
+                    <td>@Session["resultDevelopmentTimeDD"] <i class="text-small"> month</i></td>
+
+                </tr>
+                <tr class="text-small">
+
+                    <td>At code and unit test</td>
+                    <td>@Session["resultDevelopmentTimeCUT"] <i class="text-small"> month</i></td>
+
+                </tr>
+                <tr class="text-small">
+
+                    <td>At integration and test</td>
+                    <td>@Session["resultDevelopmentTimeIT"] <i class="text-small"> month</i></td>
+                </tr>
+
+            </table>
+
+
+
+        </div>
+
+    </div>
+    <h4 class="text-center"><b class="text-center">STAFF &nbsp &nbsp   </b> @Session["staff"] <i class="text-small text-center"> persons</i></h4>
+
+
+    <br />
+    <br />
+
+
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Generate Report</button>
+
+
+
+    
+
+    <br />
+    <br />
+
+
+    <h4><b> More Operations</b></h4>
+
+    <ol>
+    
+        <li><h4>@Html.ActionLink("Click here", "Cost", "Home", new { area = "" }, new { @class = "btn btn-warning" }) <strong> to estimate project cost.</strong> </h4></li>
+        <li><h4>@Html.ActionLink("Click here", "SelectStage", "COCOMOI", new { @class = "btn btn-primary" }) <strong> to estimate again with same project size and other @Session["Technique"] models. </strong> </h4></li>
+        <li><h4>@Html.ActionLink("Click here", "Size", "Home", new { area = "" }, new { @class = "btn btn-success" }) <strong> to estimate again with different project size and same estimation technique. </strong> </h4></li>
+        <li><h4>@Html.ActionLink("Click here", "index", "Home", new { area = "" }, new { @class = "btn btn-danger" }) <strong> to estimate again with different project size and different estimation technique. </strong> </h4></li>
+  
+    </ol>
+
+
+
+    @if (TempData["SuccessMSG"] != null)
+    {
+        <script>
+            swal(
+                'Report saved',
+                '',
+                'success')
+        </script>
+    }
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+</div>
+
+
+
+
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog ">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #1A242D; color:#ffffff;">
+                <button type="button" class="close" style="background-color: #1A242D; color:#ffffff;" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="background-color: #1A242D; color:#ffffff;">Advanced Stage - COCOCMO I</h4>
+            </div>
+
+            <div  id="printable"  class="modal-body text-web text-black">
+
+
+
+                @*Project Details*@
+                <h4 class="text-web "><label class="number">1</label> Project Details</h4>
+
+                <div class="row">
+
+
+
+
+                    <div class="col-md-12">
+
+                        <table class="table table-responsive table-borderless">
+
+                            <tr>
+                                <td><b>Project Name</b></td>
+                                <td>@Session["valueProjectName"]</td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Process Model</b></td>
+                                <td>@Session["valueProcessModel"]</td>
+                            </tr>
+                            <tr>
+                                <td><b>Selected Language</b></td>
+                                <td>@Session["textLanguageFactor"] </td>
+                            </tr>
+
+                        </table>
+
+
+                    </div>
+                </div>
+                <hr />
+
+
+                @*Project Mode*@
+                <h4 class="text-web "><label class="number"> 2 </label> Selected Mode</h4>
+                <div class="row">
+                    <div class="col-md-12">
+
+
+                        <table class="table table-responsive table-borderless">
+                            <tr>
+                                <td><b>Mode</b></td>
+                                <td>@Session["Mode"] </td>
+
+
+
+
+
+
+                        </table>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <b>Constant Values</b>
+
+
+                        <table class="table table-borderless table-responsive">
+
+                            <tr>
+                                <td>a</td>
+                                <td>@Session["a"]</td>
+                            </tr>
+                            <tr>
+                                <td>b</td>
+                                <td>@Session["b"]</td>
+                            </tr>
+                            <tr>
+                                <td>c</td>
+                                <td>@Session["c"]</td>
+                            </tr>
+                            <tr>
+                                <td>d</td>
+                                <td>@Session["d"]</td>
+                            </tr>
+                        </table>
+
+
+
+                    </div>
+                </div>
+                <hr />
+
+                @*Project Stage*@
+                <h4 class="text-web "> <label class="number"> 3 </label> Selected Stage</h4>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-responsive table-borderless">
+
+                            <tr>
+                                <td><b>Stage</b></td>
+                                <td>@Session["Stage"]</td>
+                            </tr>
+
+                        </table>
+
+
+                    </div>
+                </div>
+                <hr />
+
+
+                @*Unadjusted Function Point*@
+                <h4 class="text-web "> <label class="number"> 4 </label> Unadjusted Function Points</h4>
+
+                <div class="row">
+                    <div class="col-md-12">
+
+
+
+                        <table class="table table-borderless table-responsive ">
+                            <tr>
+                                <th><h4>Elements</h4></th>
+                                <th colspan="3"><h4>Complexity Weighting Factors</h4></th>
+
+
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Low</td>
+                                <td>Average</td>
+                                <td>High</td>
+                            </tr>
+
+                            <tr>
+                                <td><p>External Inputs</p></td>
+
+                                <td>
+                                    @Session["EI_LOW"]
+                                </td>
+
+                                <td>
+                                    @Session["EI_AVERAGE"]
+                                </td>
+
+                                <td>
+                                    @Session["EI_HIGH"]
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><p>External Outputs</p></td>
+                                <td>
+                                    @Session["EO_LOW"]
+                                </td>
+                                <td>
+                                    @Session["EO_AVERAGE"]
+
+
+                                </td>
+                                <td>
+                                    @Session["EO_HIGH"]
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><p>External Inquiries</p></td>
+                                <td>
+                                    @Session["EQ_LOW"]
+                                </td>
+                                <td>
+                                    @Session["EQ_AVERAGE"]
+                                </td>
+                                <td>
+                                    @Session["EQ_HIGH"]
+
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><p>External Interface files</p></td>
+                                <td>
+                                    @Session["EIF_LOW"]
+                                </td>
+                                <td>
+                                    @Session["EIF_AVERAGE"]
+                                </td>
+                                <td>
+                                    @Session["EIF_HIGH"]
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Internal Logical files</p></td>
+                                <td>
+                                    @Session["ILF_LOW"]
+
+
+                                </td>
+                                <td>
+                                    @Session["ILF_AVERAGE"]
+                                </td>
+                                <td>
+                                    @Session["ILF_HIGH"]
+
+                                </td>
+                            </tr>
+
+
+
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <table class="table table-responsive table-borderless">
+
+                            <tr>
+
+                                <th><b>Total</b></th>
+                                <td>@Session["resultUnadjustedFuctionPoints"]</td>
+
+                            </tr>
+
+                        </table>
+
+                    </div>
+                </div>
+                <hr />
+
+
+                @*Value Adjustment Factors*@
+                <h4 class="text-web "> <label class="number"> 5 </label> Value Adjustment Factors</h4>
+
+                <div class="row">
+
+
+                    <div class="col-md-6">
+
+
+
+                        <table class="table table-responsive table-borderless">
+                            <tr>
+                                <td>Data Communication</td>
+                                <td>@Session["valueFactorDC"]</td>
+                            </tr>
+
+                            <tr>
+
+                                <td>Distributed Data Processing</td>
+                                <td>@Session["valueFactorDDP"]</td>
+                            </tr>
+
+                            <tr>
+
+                                <td>Performance</td>
+                                <td>@Session["valueFactorPER"]</td>
+                            </tr>
+
+                            <tr>
+                                <td>Heavly Used Configuration</td>
+                                <td>@Session["valueFactorHUC"]</td>
+
+                            </tr>
+
+                            <tr>
+                                <td>Online Data Entry</td>
+                                <td>@Session["valueFactorODE"]</td>
+                            </tr>
+
+                            <tr>
+
+                                <td>Transaction Rate</td>
+                                <td>@Session["valueFactorTR"]</td>
+                            </tr>
+
+                            <tr>
+                                <td>End User Efficiency</td>
+                                <td>@Session["valueFactorEUE"]</td>
+                            </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </table>
+
+                    </div>
+
+
+
+                    <div class="col-md-6">
+
+
+                        <table class="table table-responsive table-borderless">
+
+                            <tr>
+
+                                <td>Complex Processing</td>
+                                <td>@Session["valueFactorCP"]</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Online Updates</td>
+                                <td>@Session["valueFactorOU"]</td>
+
+                            </tr>
+
+
+
+
+                            <tr>
+                                <td>Resuabilty</td>
+                                <td>@Session["valueFactorREU"]</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Installation Ease</td>
+                                <td>@Session["valueFactorIE"]</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Operational Ease</td>
+                                <td>@Session["valueFactorOE"]</td>
+
+                            </tr>
+
+
+
+
+                            <tr>
+                                <td>Multiple Sites</td>
+                                <td>@Session["valueFactorMS"]</td>
+                            </tr>
+
+
+                            <tr>
+                                <td>Facilitate Change</td>
+                                <td>@Session["valueFactorFC"]</td>
+                            </tr>
+
+                        </table>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <table class="table table-responsive table-borderless">
+                            <tr>
+                                <td><b>Total</b></td>
+                                <td>@Session["resultValueAdjustmentFactors"]</td>
+                            </tr>
+                        </table>
+
+
+                    </div>
+                </div>
+                <hr />
+
+                @*Effort Adjustment Factor*@
+                <h4 class="text-web "> <label class="number"> 6 </label> Effort Adjustment Factor</h4>
+
+                <div class="row">
+                    <div class="col-md-12">
+
+
+
+                        <table class="table table-responsive table-borderless">
+                            <tr>
+                                <td><b>PRODUCT ATTRIBUTES</b></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    1. Reliability (RELY)
+                                </td>
+                                <td>@Session["textRELY"]</td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    2. Data (DATA)
+                                </td>
+
+                                <td>@Session["textDATA"]</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    3. Product Complexity (CPLX)
+
+                                </td>
+                                <td>@Session["textCPLX"]</td>
+
+                            </tr>
+
+
+
+                            <tr>
+                                <td colspan="2"><b>PLATFORM ATTRIBUTES</b></td>
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    1. Execution time and Constraint(TIME)
+
+                                </td>
+
+                                <td>@Session["textTIME"]</td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    2. Main Storage Constraint (STOR)
+
+                                </td>
+                                <td>@Session["textSTOR"]</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3. Virtual Machine Volatility (VIRT)
+
+                                </td>
+                                <td>@Session["textVIRT"]</td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    4. Computer Turnaround Time (TURN)
+
+
+
+                                </td>
+                                <td>@Session["textTURN"]</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2"><b>PERSONAL ATTRIBUTES</b></td>
+                            </tr>
+
+                            <tr>
+
+                                <td>
+                                    1. Analyst Capability (ACAP):
+
+                                </td>
+
+                                <td>@Session["textACAP"]</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2. Application Experience (AEXP):
+
+
+
+
+                                </td>
+                                <td>@Session["textAEXP"]</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3. Programmer Capability (PCAP):
+
+
+
+
+                                </td>
+
+                                <td>@Session["textPCAP"]</td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    4. Virtual Machine Experience (VEXP):
+
+
+
+                                </td>
+                                <td>@Session["textVEXP"]</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    5. Language Experience (LEXP):
+
+
+
+
+                                </td>
+
+                                <td>@Session["textLEXP"]</td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2"><b>PROJECT ATTRIBUTES</b></td>
+                            </tr>
+
+                            <tr>
+
+                                <td>
+                                    1. Modern Programming Practices (MODP):
+
+
+
+
+                                </td>
+                                <td>@Session["textMODP"]</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2. Software Tools (TOOL):
+
+
+
+
+                                </td>
+                                <td>@Session["textTOOL"]</td>
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    3. Development Schedule (SCED):
+
+
+
+
+                                </td>
+                                <td>@Session["textSCED"]</td>
+
+                            </tr>
+
+
+
+
+                        </table>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <table class="table table-responsive table-borderless">
+
+                            <tr>
+                                <td> <b>Total</b></td>
+
+                                <td>@Session["resultEffortAdjustmentFactor"]</td>
+
+                            </tr>
+
+
+                        </table>
+
+
+
+                    </div>
+                </div>
+
+
+                <hr />
+
+
+
+                @*Final Estimation*@
+                <h4 class="text-web "> <label class="number"> 7 </label> Final Estimations</h4>
+
+
+                <table class="table table-responsive table-borderless">
+
+
+                    <tr>
+                        <td><b>Size</b> </td>
+                        <td>@Session["resultSize"] <i class="text-small"> KLOC</i></td>
+                    </tr>
+                    <tr>
+                        <td><b>Staff</b> </td>
+                        <td>@Session["staff"] <i class="text-small"> persons</i></td>
+                    </tr>
+                </table>
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <table class="table table-responsive table-borderless">
+
+                            <tr>
+                                <td>
+                                    <b>Total<br /> Effort &nbsp</b> @Session["resultEffort"] <i class="text-small"> person-months</i>
+
+                                    <table class="table table-borderless table-responsive ">
+                                        <tr>
+                                            <td class="text-small">Effort RPD</td>
+                                            <td class="text-small">@Session["resultEffortRPD"]<i class="text-small"> person-month</i>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-small">Effort DD</td>
+                                            <td class="text-small">@Session["resultEffortDD"]<i class="text-small"> person-month</i>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-small">Effort CUT</td>
+                                            <td class="text-small">@Session["resultEffortCUT"]<i class="text-small"> person-month</i>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-small">Effort IT</td>
+                                            <td class="text-small">@Session["resultEffortIT"]<i class="text-small"> person-month</i>
+                                        </tr>
+                                    </table>
+                                </td>
+
+                            </tr>
+
+
+                        </table>
+
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <table class="table table-responsive table-borderless">
+
+
+
+                            <tr>
+
+                                <td>
+                                    <b>Total<br /> Development Time &nbsp </b> @Session["resultDevelopmentTime"]<i class="text-small"> months</i>
+
+                                    <table class="table table-borderless table-responsive">
+                                        <tr>
+                                            <td class="text-small">Development Time RPD</td>
+                                            <td class="text-small">@Session["resultDevelopmentTimeRPD"]<i class="text-small"> month</i>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-small">Development Time DD</td>
+                                            <td class="text-small">@Session["resultDevelopmentTimeDD"]<i class="text-small"> month</i>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-small">Development Time CUT</td>
+                                            <td class="text-small">@Session["resultDevelopmentTimeCUT"]<i class="text-small"> month</i>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-small">Development Time IT</td>
+                                            <td class="text-small">@Session["resultDevelopmentTimeIT"]<i class="text-small"> month</i>
+                                        </tr>
+                                    </table>
+
+                                </td>
+
+
+                            </tr>
+
+
+                        </table>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+            <div class="modal-footer">
+                @if (Session["user"] != null)
+                {
+                    @Html.ActionLink("save", "SaveResultAdvancedStage", "COCOMOI", new { area = "COCOMOI" }, new { @class = "btn btn-default" })
+                }
+                else
+                {
+                    @Html.ActionLink("Login to save", "Account", "Home", new { area = "" }, new { @class = "btn btn-default" })
+
+                }
+                 <input type="button" class="btn btn-default" onclick="printDiv('printable')" value="print" />
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<script>
+    function printDiv(divName) {
+
+        var printContents = "<h1 class='text-center'>Software Project Estimator</h2> <h3 class='text-center'><u>Final Report</u></h3><br>";
+        printContents += document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+        window.location.reload();
+
+
+        document.body.innerHTML = originalContents;
+
+
+
+    }
+</script>

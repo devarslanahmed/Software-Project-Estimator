@@ -1,0 +1,143 @@
+﻿
+@{
+    ViewBag.Title = "SelectStage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}    //if (Session["Technique"] == null)
+    //{
+    //    Response.Redirect("~/Home/Index");
+    //}
+
+<style>
+    .btn-default {
+        width: 60%;
+        font-size: 17px;
+    }
+
+    .text-small {
+        width: 100%;
+        font-size: 15px;
+    }
+</style>
+
+
+
+<div class="jumbotron-m">
+
+
+    <header>
+
+        <h2><b>SELECT STAGE</b></h2>
+
+        <h4><i>Please select the stage of your project, at which you want to perofrm estimatimation.</i></h4>
+
+    </header>
+
+
+    <br />
+    <br />
+
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+
+                <div class="panel-body ">
+
+                    <h3 class="text-center text-blue"><b> BASIC STAGE </b></h3>
+                    <hr />
+                    <p class="text-small text-black">
+                        1. It's applied early in the project.<br />
+                        2. It computes effort as a function of program size, Estimate the project parameters, Basic stage would provide a quick and early approximation of software cost.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <p class="text-center">   @Html.ActionLink("SELECT", "SelectMode", "COCOMOI", new { Stage = "Basic Stage" }, new { @class = "btn btn-default btn-blue" })</p>
+
+
+
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <h3 class="text-center text-blue"><b> INTERMEDIATE STAGE </b></h3>
+                    <hr />
+
+                    <p class="text-small text-black">
+                        1. It's applied after requirements acquisition.<br />
+                        2. The intermediate stage computes effort as a function of size and a set of cost drivers.
+                        &nbsp &nbsp
+                        &nbsp &nbsp&nbsp &nbsp
+                        &nbsp &nbsp&nbsp &nbsp
+                        &nbsp &nbsp&nbsp &nbsp
+                        &nbsp &nbsp&nbsp &nbsp
+                        &nbsp &nbsp&nbsp &nbsp
+                        &nbsp &nbsp&nbsp &nbsp
+                        &nbsp &nbsp&nbsp &nbsp
+
+
+                    </p>
+
+                </div>
+
+
+
+
+                <p class="text-center"> @Html.ActionLink("SELECT", "SelectMode", "COCOMOI", new { Stage = "Intermediate Stage" }, new { @class = "btn btn-default btn-blue" })</p>
+
+
+
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+
+                    <h3 class="text-center text-blue"><b> ADVANCED STAGE </b></h3>
+                    <hr />
+
+                    <p class="text-small text-black">
+                        1. It's applied when the desighn is complete.<br />
+                        2. It computes effort as a function of program size and a set of cost drivers weighted according to each phase of software lifecycle.
+                    </p>
+
+
+                </div>
+
+
+
+
+                <p class="text-center">@Html.ActionLink("SELECT", "SelectMode", "COCOMOI", new { Stage = "Advanced Stage" }, new { @class = "btn btn-default btn-blue" })</p>
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+

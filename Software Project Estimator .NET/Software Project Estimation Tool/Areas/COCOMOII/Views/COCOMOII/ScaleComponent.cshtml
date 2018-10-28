@@ -1,0 +1,93 @@
+﻿@model Software_Project_Estimation_Tool.Areas.COCOMOII.Models.ScaleComponentModel
+@{
+    ViewBag.Title = "ScaleComponent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //if (Session["Technique"] == null)
+    //{
+    //    Response.Redirect("~/Home/Index");
+    //}
+}
+
+
+
+
+
+<div class="jumbotron-n ">
+   
+    <header>
+
+        <h2><b>SCALE COMPONENT (@Session["Model"])</b></h2>
+        <h4><i>Rate all Scale Factors from Very Low to Very High.</i></h4>
+       
+
+    </header>
+
+
+
+    @using (Html.BeginForm())
+    {
+        
+        <table class="table table-responsive table-borderless text-left center">
+            <tr>
+                <th class="text-left" ><h4><b>SCALE FACTORS</b></h4></th>
+                <th class="text-left"><h4><b>WEIGHTS</b></h4></th>
+            </tr>
+            <tr>
+                <td class="text-left">Precedentedness</td>
+                <td class="">
+                    @Html.DropDownListFor(m => m.PREC_VALUE, Model.PREC, "Select", new { @class = "btn btn-default" })
+                    @Html.ValidationMessageFor(m => m.PREC_VALUE, "", new { @class = "text-error" })
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-left">Development/Flexibility</td>
+                <td>
+                    @Html.DropDownListFor(m => m.FLEX_VALUE, Model.FLEX, "Select", new { @class = "btn btn-default" })
+                    @Html.ValidationMessageFor(m => m.FLEX_VALUE, "", new { @class = "text-error" })
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-left inLine" >Architecture/Risk Resolution</td>
+                <td>
+                    @Html.DropDownListFor(m => m.RESL_VALUE, Model.RESL, "Select", new { @class = "btn btn-default" })
+                    @Html.ValidationMessageFor(m => m.RESL_VALUE, "", new { @class = "text-error" })
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-left">Team Cohesion</td>
+                <td class="text-left">
+                    @Html.DropDownListFor(m => m.TEAM_VALUE, Model.TEAM, "Select", new { @class = "btn btn-default" })
+                    @Html.ValidationMessageFor(m => m.TEAM_VALUE, "", new { @class = "text-error" })
+                </td>
+            </tr>
+
+            <tr>
+                <td  class="text-left">Process Maturity</td>
+                <td>
+                    @Html.DropDownListFor(m => m.PMAT_VALUE, Model.PMAT, "Select", new { @class = "btn btn-default" })
+                    @Html.ValidationMessageFor(m => m.PMAT_VALUE, "", new { @class = "text-error" })
+                </td>
+            </tr>
+
+
+        </table>
+
+        <br />
+        <br />
+        <hr />
+        <input type="submit" value="Calculate" class="btn btn-fad2 btn-lg pull-right">
+      
+    }
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+</div>
+

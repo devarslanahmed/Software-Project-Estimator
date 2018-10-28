@@ -1,0 +1,316 @@
+﻿@model Software_Project_Estimation_Tool.Models.UnadjustedFunctionPointsModel
+@{
+    ViewBag.Title = "UnadjustedFunctionPoints";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Session["Technique"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+}
+
+
+<style>
+    .form-control {
+        text-align: center;
+        width: 70%;
+        height: 30px;
+    }
+
+
+
+    .text-black {
+        color: #ffd800;
+    }
+
+    .btn-sm {
+        font-style: italic;
+        font-size: 14px;
+    }
+</style>
+
+
+<div class="jumbotron-o">
+
+    <header>
+
+        <h2><b>UNADJUSTED FUNCTION POINT </b></h2>
+        <h4><i> Enter the values in given fields according to your project requirements.</i></h4>
+
+    </header>
+
+
+    <br />
+
+    @using (Html.BeginForm())
+    {
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-4">
+
+                <table class="table table-responsive table-borderless">
+
+
+                    <tr>
+                        <th colspan="2" class="text-black"><h4><b> EXTERNAL INPUTS</b></h4></th>
+                    </tr>
+
+                    <tr>
+
+                        <th class="btn-sm">Low</th>
+                        <td>
+                            @Html.TextBoxFor(m => m.EI_LOW, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.EI_LOW, "", new { @class = " text-error " })
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <th class="btn-sm">Average</th>
+                        <td>
+                            @Html.TextBoxFor(m => m.EI_AVERAGE, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.EI_AVERAGE, "", new { @class = "text-error" })
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th class="btn-sm">High</th>
+                        <td>
+                            @Html.TextBoxFor(m => m.EI_HIGH, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.EI_HIGH, "", new { @class = "text-error" })
+                        </td>
+
+
+                    </tr>
+
+
+                </table>
+
+
+            </div>
+
+
+            <div class="col-md-4">
+                <table class="table table-responsive table-borderless">
+
+
+                    <tr>
+                        <th colspan="2" class="text-black"><h4><b> EXTERNAL OUTPUTS </b></h4></th>
+                    </tr>
+
+                    <tr>
+
+                        <th class="btn-sm">Low</th>
+                        <td>
+                            @Html.TextBoxFor(m => m.EO_LOW, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.EO_LOW, "", new { @class = " text-error " })
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <th class="btn-sm">Average</th>
+                        <td>
+                            @Html.TextBoxFor(m => m.EO_AVERAGE, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.EO_AVERAGE, "", new { @class = "text-error" })
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th class="btn-sm">High</th>
+                        <td>
+                            @Html.TextBoxFor(m => m.EO_HIGH, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.EI_HIGH, "", new { @class = "text-error" })
+                        </td>
+
+
+                    </tr>
+
+
+                </table>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <table class="table table-responsive table-borderless">
+
+
+                    <tr>
+                        <th colspan="2" class="text-black"><h4><b> EXTERNAL INQUIRIES </b></h4></th>
+                    </tr>
+
+                    <tr>
+
+                        <th class="btn-sm">Low</th>
+                        <td>
+                            @Html.TextBoxFor(m => m.EQ_LOW, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.EQ_LOW, "", new { @class = " text-error " })
+                        </td>
+
+                    </tr>
+
+                    <tr class="btn-sm">
+                        <th>Average</th>
+                        <td>
+                            @Html.TextBoxFor(m => m.EQ_AVERAGE, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.EQ_AVERAGE, "", new { @class = "text-error" })
+                        </td>
+
+                    </tr>
+
+                    <tr class="btn-sm">
+
+                        <th>High</th>
+                        <td>
+                            @Html.TextBoxFor(m => m.EQ_HIGH, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.EQ_HIGH, "", new { @class = "text-error" })
+                        </td>
+
+
+                    </tr>
+
+
+                </table>
+
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <table class="table table-responsive table-borderless">
+
+
+                    <tr>
+                        <th colspan="2" class="text-black"><h4><b>EXTERNAL INTERFACE FILES</b></h4></th>
+                    </tr>
+
+                    <tr>
+
+                        <th class="btn-sm">Low</th>
+                        <td>
+                            @Html.TextBoxFor(m => m.EIF_LOW, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.EIF_LOW, "", new { @class = " text-error " })
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <th class="btn-sm">Average</th>
+                        <td>
+                            @Html.TextBoxFor(m => m.EIF_AVERAGE, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.EIF_AVERAGE, "", new { @class = "text-error" })
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th class="btn-sm">High</th>
+                        <td>
+                            @Html.TextBoxFor(m => m.EIF_HIGH, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.EIF_HIGH, "", new { @class = "text-error" })
+                        </td>
+
+
+                    </tr>
+
+
+                </table>
+
+            </div>
+            <div class="col-md-4">
+                <table class="table table-responsive table-borderless">
+
+
+                    <tr>
+                        <th colspan="2" class="text-black"><h4><b>INTERNAL LOGICAL FILES</b></h4></th>
+                    </tr>
+
+                    <tr>
+
+                        <th class="btn-sm">Low</th>
+                        <td>
+                            @Html.TextBoxFor(m => m.ILF_LOW, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.ILF_LOW, "", new { @class = " text-error " })
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <th class="btn-sm">Average</th>
+                        <td>
+                            @Html.TextBoxFor(m => m.ILF_AVERAGE, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.ILF_AVERAGE, "", new { @class = "text-error" })
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th class="btn-sm">High</th>
+                        <td>
+                            @Html.TextBoxFor(m => m.ILF_HIGH, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.ILF_HIGH, "", new { @class = "text-error" })
+                        </td>
+
+
+                    </tr>
+
+
+                </table>
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <hr />
+        <p> <input type="submit" value="Next Step" class="btn btn-fad4 btn-lg pull-right" /></p>
+
+
+
+
+
+        <br />
+        <br />
+
+
+
+
+    }
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

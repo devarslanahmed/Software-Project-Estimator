@@ -1,0 +1,225 @@
+﻿@model Software_Project_Estimation_Tool.Models.ValueAdjustmentFactorsModel
+@{
+    ViewBag.Title = "ValueAdjustmentFactors";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Session["resultUnadjustedFuctionPoints"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+}
+
+
+<style>
+
+    .text-black {
+        color:#ffd800;
+    }
+
+    .btn-default {
+    
+        width:100px;
+    }
+
+</style>
+
+
+<div class="jumbotron-o">
+
+
+    <header>
+        <h2><b>VALUE ADJUSTMENT FACTOR</b></h2>
+        <h4><i>Rate the following factors from 0-5, 0 means, the component is not relevant to the system and 5 means, <br /> component is essential: </i></h4>
+    </header>
+
+
+    <br />
+
+    <br />
+    @using (Html.BeginForm())
+    {
+
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+
+                <div class="row">
+                    <div class="col-lg-4">
+
+
+                        <table class="table table-responsive table-borderless">
+
+                            <tr>
+                                <td><b class="text-black">DATA COMMUNICATION</b><br /> How many communication facilities are there to aid in the transfer or exchange of information with the application or system?</td>
+                                <td class="">
+                                    @Html.DropDownListFor(m => m.FACTOR_DC_VALUE, Model.FACTOR_DC, new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.FACTOR_DC_VALUE, "", new { @class = "  text-error" })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b class="text-black">DISTRIBUTED DATA PROCESSING</b><br /> How are distributed data and processing functions handled?</td>
+                                <td class="">
+                                    @Html.DropDownListFor(m => m.FACTOR_DDP_VALUE, Model.FACTOR_DDP, new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.FACTOR_DDP_VALUE, "", new { @class = "  text-error" })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b class="text-black">PERFORMANCE</b><br /> Was response time or throughput required by the user?</td>
+                                <td class="">
+                                    @Html.DropDownListFor(m => m.FACTOR_PER_VALUE, Model.FACTOR_PER, new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.FACTOR_PER_VALUE, "", new { @class = "  text-error" })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b class="text-black">HEAVILY USED CONFIGURATION</b><br /> How heavily used is the current hardware platform where the application will be executed? </td>
+                                <td class="">
+                                    @Html.DropDownListFor(m => m.FACTOR_HUC_VALUE, Model.FACTOR_HUC, new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.FACTOR_HUC_VALUE, "", new { @class = "  text-error" })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b class="text-black">TRANSACTION RATE</b><br /> How frequently are transactions executed daily, weekly, monthly, etc.?</td>
+                                <td class="">
+                                    @Html.DropDownListFor(m => m.FACTOR_TR_VALUE, Model.FACTOR_TR, new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.FACTOR_TR_VALUE, "", new { @class = "  text-error" })
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                    <div class="col-lg-4">
+
+                        <table class="table table-responsive table-borderless">
+
+                            <tr>
+                                <td><b class="text-black">ONLINE DATA ENTRY</b><br />What percentage of the information is entered On-Line? </td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.FACTOR_ODE_VALUE, Model.FACTOR_ODE, new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.FACTOR_ODE_VALUE, "", new { @class = "  text-error" })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b class="text-black">END USER EFFICIENCY</b><br /> Was the application designed for end-user efficiency?</td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.FACTOR_EUE_VALUE, Model.FACTOR_EUE, new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.FACTOR_EUE_VALUE, "", new { @class = "  text-error" })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b class="text-black">ONLINE UPDATES</b><br /> How many ILF’s are updated by On-Line transaction?</td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.FACTOR_OU_VALUE, Model.FACTOR_OU, new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.FACTOR_OU_VALUE, "", new { @class = "  text-error" })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b class="text-black">COMPLEX PROCESSING</b><br /> Does the application have extensive logical or mathematical processing? </td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.FACTOR_CP_VALUE, Model.FACTOR_CP, new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.FACTOR_CP_VALUE, "", new { @class = "  text-error" })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b class="text-black">REUSABILITY</b><br /> Was the application developed to meet one or many user’s needs? </td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.FACTOR_REU_VALUE, Model.FACTOR_REU, new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.FACTOR_REU_VALUE, "", new { @class = "  text-error" })
+                                </td>
+
+
+                            </tr>
+
+
+
+                        </table>
+
+                    </div>
+
+
+                    <div class="col-lg-4">
+
+
+                        <table class="table table-responsive table-borderless">
+
+
+                            <tr>
+                                <td><b class="text-black">INSTALLATION EASE</b><br /> How difficult is conversion and installation?</td>
+
+                                <td>
+                                    @Html.DropDownListFor(m => m.FACTOR_IE_VALUE, Model.FACTOR_IE, new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.FACTOR_IE_VALUE, "", new { @class = "  text-error" })
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+                                <td><b class="text-black">OPERATIONAL EASE</b><br /> How effective and/or automated are start-up, back-up, and recovery procedures?</td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.FACTOR_OE_VALUE, Model.FACTOR_OE, new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.FACTOR_OE_VALUE, "", new { @class = "  text-error" })
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+                                <td><b class="text-black">MULTIPLE SITES</b><br /> Was the application specifically designed, developed, and supported to be installed at multiple sites for multiple organizations? </td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.FACTOR_MS_VALUE, Model.FACTOR_MS, new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.FACTOR_MS_VALUE, "", new { @class = "  text-error" })
+                                </td>
+
+
+                            </tr>
+
+
+                            <tr>
+                                <td><b class="text-black">FACILITATE CHANGE</b><br /> Was the application specifically designed, developed, and supported to facilitate change? </td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.FACTOR_FC_VALUE, Model.FACTOR_FC, new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.FACTOR_FC_VALUE, "", new { @class = "  text-error" })
+                                </td>
+
+                            </tr>
+
+
+
+                        </table>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+
+                <hr />
+                <p> <input type="submit" value="Next Step" class="btn btn-fad4 btn-lg pull-right" /></p>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+
+    }
+</div>
+
+

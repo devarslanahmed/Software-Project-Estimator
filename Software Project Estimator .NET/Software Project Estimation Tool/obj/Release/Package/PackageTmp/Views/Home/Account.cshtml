@@ -1,0 +1,223 @@
+﻿@model Software_Project_Estimation_Tool.Models.User
+
+@{
+    ViewBag.Title = "Account";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Session["user"] != null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+
+}
+<br />
+<br />
+
+<style>
+
+    .lg-back {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        background-image: url('../../img/projectmanager01.jpg');
+        height: 100%;
+        width: 100%;
+        background-attachment: fixed;
+        position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #ffffff;
+        
+    }
+
+
+
+    .jumbotron-m {
+        /*background-color: rgba(26, 36, 45, 0.90);*/
+        background-color: rgba(37, 105, 142, 0.50);
+        padding: 30px;
+        height: 100%;
+        width: 100%;
+        background-attachment: fixed;
+        position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+
+<div class="jumbotron-m">
+    <br />
+    <div class="row ">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-4 text-left">
+
+            <div style="">
+                @*border-right: thin solid #000000;*@
+
+
+            @using (Html.BeginForm())
+            {
+
+
+
+                <div class="jumbotron-l  text-web">
+
+                    <h2 class="text-web">Login &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp <span class="glyphicon glyphicon-lock"></span></h2>
+                    <hr />
+
+
+                    <div class="form-group ">
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", @placeholder = "Username" } })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Password" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <div>
+                            <input type="submit" value="Login" formaction='@Url.Action("Login", "Home",new { area = "" })' class="btn btn-fad form-control" />
+                        </div>
+                    </div>
+
+
+                    <br />
+
+                    @if (TempData["errorMSG"] != null)
+                    {
+                        <script>
+                     swal(
+                        'Oops...',
+                        '@TempData["errorMSG"]',
+                        'error')
+                        </script>
+                    }
+
+
+
+                </div>
+            }
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="col-md-4 text-left">
+        <div style="">
+            @using (Html.BeginForm())
+            {
+
+
+
+
+                <div class="jumbotron-l text-web">
+
+                    <h2 class="text-web">
+                        Signup &nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp <span class="glyphicon glyphicon-pencil"></span>
+                    </h2>
+                    <hr />
+
+                    <div class=" form-group">
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", @placeholder = "Username" } })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group">
+
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Password" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="form-group">
+
+                        @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", @placeholder = "Confirm Password" } })
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group">
+
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group">
+
+                        @Html.EditorFor(model => model.OrgnizationName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Orgnization Name" } })
+                        @Html.ValidationMessageFor(model => model.OrgnizationName, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="form-group">
+
+                        @Html.EditorFor(model => model.Position, new { htmlAttributes = new { @class = "form-control", @placeholder = "Position" } })
+                        @Html.ValidationMessageFor(model => model.Position, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class=" ">
+                            <input type="submit" value="Sign Up" class="btn form-control btn-fad" />
+                        </div>
+
+                    </div>
+                    <br />
+
+
+                    @if (@ViewBag.SucessMSG != null)
+                    {
+
+                        Response.Redirect("~/Home/Index");
+                    }
+
+
+                    @if (ViewBag.DuplicateMSG != null)
+                    {
+                        <script>
+                     swal(
+                        'Oops...',
+                        '@ViewBag.DuplicateMSG',
+                        'error')
+                        </script>
+                    }
+
+                </div>
+
+
+
+            }
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<br />
+<br />
+<br />
+</div>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
+
+

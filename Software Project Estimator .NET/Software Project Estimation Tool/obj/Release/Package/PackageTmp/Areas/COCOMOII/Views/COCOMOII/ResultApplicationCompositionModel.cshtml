@@ -1,0 +1,315 @@
+﻿
+@{
+    ViewBag.Title = "ResultApplicationCompositionModel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //if (Session["valueDevExp"] == null)
+    //{
+    //    Response.Redirect("~/home/index");
+    //}
+}
+
+
+<div class="jumbotron-n">
+    <header>
+        <h2><b>FINAL ESTIMATIONS (@Session["Model"])</b></h2>
+
+    </header>
+
+    <br />
+    <br />
+
+
+    <div></div>
+
+    <table class="table table-borderless table-responsive">
+
+        <tr>
+            <td><h4><b>NEW OBJECT POINT</b></h4> @Session["resultNewObjectPoints"]</td>
+            <td><h4><b>PRODUCTIVITY RATE</b></h4> @Session["valueDevExp"]</td>
+            <td><h4><b>EFFORT</b></h4> @Session["resultEffort"] <i class="text-small"> person-month</i></td>
+        </tr>
+      
+    </table>
+    <br />
+    <br />
+
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal">Generate Report</button>
+
+    <br />
+    <br />
+
+    <h4><b> More Operations</b></h4>
+
+    <ol>
+        <li><h4>@Html.ActionLink("Click here", "SelectModel", "COCOMOII", new { @class = "btn btn-primary" }) <strong> to estimate again with same project size and other @Session["Technique"] models. </strong> </h4></li>
+        <li><h4>@Html.ActionLink("Click here", "Size", "Home", new { area = "" }, new { @class = "btn btn-success" }) <strong> to estimate again with different project size and same estimation technique. </strong> </h4></li>
+        <li><h4>@Html.ActionLink("Click here", "index", "Home", new { area = "" }, new { @class = "btn btn-danger" }) <strong> to estimate again with different project size and different estimation technique. </strong> </h4></li>
+
+
+    </ol>
+
+
+    
+    @if (TempData["SuccessMSG"] != null)
+    {
+        <script>
+                     swal(
+                        'Report saved',
+                        '',
+                        'success')
+        </script>
+    }
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+</div>
+
+
+
+
+<style>
+    .text-blue {
+        background-color: #ffffff;
+        color: #1A242D;
+    }
+
+
+
+</style>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog ">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #1A242D; color:#ffffff;">
+                <button type="button" class="close" style="background-color: #1A242D; color:#ffffff;" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-blue" style="background-color: #1A242D; color:#ffffff;">Application Composition Model - COCOMO II</h4>
+            </div>
+            <div id="printable" class="modal-body text-web text-black">
+
+
+
+                @*Project Details*@
+                <h4 class="text-web "><label class="number">1</label> Project Details</h4>
+
+                <div class="row">
+
+
+
+
+                    <div class="col-md-12">
+
+                        <table class="table table-responsive table-borderless">
+
+                            <tr>
+                                <td><b>Project Name</b></td>
+                                <td>@Session["valueProjectName"]</td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Process Model</b></td>
+                                <td>@Session["valueProcessModel"]</td>
+                            </tr>
+
+
+                        </table>
+
+
+                    </div>
+                </div>
+                <hr />
+
+
+                <h4 class="text-web "><label class="number"> 2 </label> Object Points</h4>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-responsive table-borderless">
+                            <tr>
+                                <td>Object Type</td>
+                                <td>Total </td>
+                                <td>Simple</td>
+                                <td>Medium</td>
+                                <td>Difficult</td>
+                            </tr>
+                            <tr>
+                                <td class="">Screens</td>
+                                <td>
+                                    @Session["SCREEN_TOTAL"]
+                                </td>
+                                <td>
+                                    @Session["SCREEN_SIMPLE"]
+                                </td>
+                                <td>
+                                    @Session["SCREEN_MEDIUM"]
+                                </td>
+                                <td>
+                                    @Session["SCREEN_DIFFICULT"]
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="">Reports</td>
+                                <td>
+                                    @Session["REPORT_TOTAL"]
+                                </td>
+                                <td>
+                                    @Session["REPORT_SIMPLE"]
+                                </td>
+                                <td>
+                                    @Session["REPORT_MEDIUM"]
+                                </td>
+                                <td>
+                                    @Session["REPORT_DIFFICULT"]
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="">3GL Modules</td>
+                                <td>
+                                    @Session["MODULE_3GL"]
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="">Reuse Percentage</td>
+                                <td>
+                                    @Session["REUSE_PERCENTAGE"]%
+                                </td>
+                            </tr>
+
+
+                        </table>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <table>
+                            <tr>
+                                <td><b>Object Points:</b> @Session["resultObjectPoints"]</td>
+                            </tr>
+
+                            <tr>
+                                <td class=""><b>New Object Points:</b> @Session["resultNewObjectPoints"]</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+                <hr />
+
+                <h4 class="text-web "><label class="number"> 3 </label> Productivity Rate</h4>
+
+
+                <table class="table table-responsive table-borderless">
+
+                    <tr>
+                        <td><b>Developer's Experience:</b> @Session["textDevExp"]</td>
+                    </tr>
+
+                </table>
+
+
+                <hr />
+
+
+
+
+                @*Final Estimations*@
+
+                <h4 class="text-web "><label class="number"> 4 </label> Final Estimations</h4>
+
+
+
+                <table class="table table-borderless">
+
+
+
+                    <tr>
+                        <td><b>New Object Point: </b></td>
+                        <td>@Session["resultNewObjectPoints"] </td>
+                    </tr>
+                    <tr>
+                        <td><b>Productivity Rate: </b></td>
+                        <td> @Session["valueDevExp"]</td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Effort: </b> </td>
+                        <td>@Session["resultEffort"] <i class="text-small"> person-months</i></td>
+                    </tr>
+
+
+
+                </table>
+
+
+
+            </div>
+
+
+
+            <div class="modal-footer">
+                @if (Session["user"] != null)
+                {
+                    @Html.ActionLink("save", "SaveResultApplicationCompositionModel", new { area = "COCOMOII" }, new { @class = "btn btn-default" })
+                }
+                else
+                {
+                    @Html.ActionLink("Login to save", "Account", "Home", new { area = "" }, new { @class = "btn btn-default" })
+
+                }
+                <input type="button" class="btn btn-default" onclick="printDiv('printable')" value="print" />
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+    function printDiv(divName) {
+
+        var printContents = "<h1 class='text-center'>Software Project Estimator</h2> <h3 class='text-center'><u>Final Report</u></h3><br>";
+        printContents += document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+        window.location.reload();
+
+
+        document.body.innerHTML = originalContents;
+
+
+
+    }
+</script>
+
+
+
+
+

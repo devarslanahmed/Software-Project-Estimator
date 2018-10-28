@@ -1,0 +1,127 @@
+﻿@model Software_Project_Estimation_Tool.Areas.COCOMOII.Models.CostDriversEDMModel
+@{
+    ViewBag.Title = "CostDriversEDM";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+
+
+<div class="jumbotron-n ">
+
+    <header>
+
+        <h2><b>EFFORT ADJUSTMENT FACTOR (@Session["Model"])</b></h2>
+        <h4><i>Please rate the following cost drivers according to your project specifications.</i></h4>
+    </header>
+
+
+    <br />
+
+    @using (Html.BeginForm())
+    {
+
+        <div class="row center">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <div class="text-brown" style="text-align:center;"><h4><b>SEVEN ATTRIBUTES</b></h4></div>
+                        <hr />
+
+
+                        <table class="table table-responsive table-borderless text-left center">
+                            <tr>
+                                <th class="text-left"><h4><b>COST DRIVERS</b></h4></th>
+                                <th class="text-left"><h4><b>WEIGHTS</b></h4></th>
+                            </tr>
+                            <tr>
+                                <td class="text-left">Product Reliability and Complexity (RCPX)</td>
+                                <td class="">
+                                    @Html.DropDownListFor(m => m.RCPX_VALUE, Model.RCPX, "Select", new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.RCPX_VALUE, "", new { @class = "text-error" })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-left">Required Reuse (RUSE)</td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.RUSE_VALUE, Model.RUSE, "Select", new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.RUSE_VALUE, "", new { @class = "text-error" })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-left inLine">Platform Difficulty (PDIF)</td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.PDIF_VALUE, Model.PDIF, "Select", new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.PDIF_VALUE, "", new { @class = "text-error" })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-left">Personnel Capability (PERS)</td>
+                                <td class="text-left">
+                                    @Html.DropDownListFor(m => m.PERS_VALUE, Model.PERS, "Select", new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.PERS_VALUE, "", new { @class = "text-error" })
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text-left">Personnel Experience (PREX)</td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.PREX_VALUE, Model.PREX, "Select", new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.PREX_VALUE, "", new { @class = "text-error" })
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="text-left">Facilities (FCIL)</td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.FCIL_VALUE, Model.FCIL, "Select", new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.FCIL_VALUE, "", new { @class = "text-error" })
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td class="text-left">Schedule (SCED)</td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.SCED_VALUE, Model.SCED, "Select", new { @class = "btn btn-default" })
+                                    @Html.ValidationMessageFor(m => m.SCED_VALUE, "", new { @class = "text-error" })
+                                </td>
+                            </tr>
+
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+              
+
+               
+                <hr />
+                <input type="submit" value="Next Step" class="btn btn-fad2 btn-lg pull-right">
+
+                }
+
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+            </div>
+
+
+

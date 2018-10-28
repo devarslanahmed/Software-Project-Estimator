@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "COCOMOI";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //if (Session["Technique"] == null)
+    //{
+    //    Response.Redirect("~/Home/Index");
+    //}
+
+}
+
+@using (Html.BeginForm())
+{
+
+    <div class="jumbotron-m">
+
+       
+        <div class="alert alert-info fade in alert-dismissible" style="margin-top:18px;">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+            <strong>Success!</strong> Project Size has been calculated. Please follow the next step from best suited estimstion technique: @Session["Technique"]
+        </div>
+
+
+        <header>
+
+            <h2 class="text-justify"><b>CONSTRUCTIVE COST MODEL (COCOMO I)</b></h2>
+        </header>
+        <br />
+
+        <h4 class="text-justify">
+
+            COCOMO I also known as COCOMO'81, this model was proposed by DR. Berry Boehm.
+            Being a cost estimation model, COCOMO I helps to predict the effort and time that would be required to complete a particular project.
+            It's a model based on inputs relating to the size of the system and a number of cost drivers that affect productivity.There are three modes and three stages of COCOMO I.
+        </h4>
+
+
+        <h4>Modes:</h4>
+        <ol type="1">
+            <li>Organic Mode</li>
+            <li>Semidetached Mode</li>
+            <li>Embedded Mode</li>
+        </ol>
+
+        <h4>Stages:</h4>
+        <ol type="1">
+            <li>Basic Stage</li>
+            <li>Intermediate Stage</li>
+            <li>Advanced Stage</li>
+        </ol>
+
+
+
+
+        <br />
+        <h4>
+            You just have to choose a model according to your project requirements.<br />
+            The system will guide you at every step of the Estimation.
+        </h4>
+
+
+        <hr />
+
+
+        @Html.ActionLink("Lets Get Start", "SelectStage", "COCOMOI", "COCOMOI", new { @class = "btn btn-lg btn-fad pull-right" })
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+
+}

@@ -1,0 +1,232 @@
+﻿@model Software_Project_Estimation_Tool.Models.ProjectNameModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<style>
+    
+    .text-small {
+        width:70%;
+    
+    }
+
+    
+    .lg-back {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        background-image: url('/img/homepage-back.jpg');
+        /*background-color: #152534;*/
+        height: 100%;
+        width: 100%;
+        background-attachment:fixed;
+        position: center;
+        background-repeat: no-repeat;
+        background-size:cover;
+        color: #ffffff;
+        
+    }
+
+
+    .jumbotron-m {
+        background-color:rgba(39, 38, 38, 0.55);
+        padding: 30px;
+        height: 100%;
+        width: 100%;
+        position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .transparent {
+        opacity: .8;
+        
+        
+    }
+
+    .btn-lg {
+        
+       
+        background-color: #ff0000;
+        
+    }
+
+
+</style>
+
+
+
+
+
+<div class="jumbotron-m">
+
+
+    <br />
+    <br />
+
+
+    <div class="row">
+        <div class="col-md-10">
+
+
+
+
+            <h1  style="font-size:400%; letter-spacing: 3px;">Your One Stop for<span> Software <br /> Project Estimation</span></h1>
+            <h5>Estimate your project's size, effort, development time and cost with three different techniques at different phases of SDLC.</h5>
+
+
+
+
+        </div>
+        <div class="col-md-6">
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+   
+
+    <div align="right"  style="padding-top:8%; padding-right:4%;">
+
+        
+        
+    @using (Html.BeginForm())
+    {
+        <table>
+            <tr>
+                <td>
+                    <h3><b> Get Started</b></h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.TextBoxFor(m => m.PROJECT_NAME, new { @class = "form-control transparent", @placeholder = "Your Project name" })
+                    @Html.ValidationMessageFor(m => m.PROJECT_NAME, "", new { @class = " text-error" })
+                    <br />
+                </td>
+            </tr>
+           
+            <tr>
+                <td>
+                    <p>Select your design process model to process<br /> to the suitable estimation technique.</p>
+                    <h4>Process Model</h4>
+                </td>
+            </tr>
+           <tr>
+               <td>
+                   @Html.DropDownListFor(m => m.PROCESS_MODEL_VALUE, Model.PROCESS_MODEL, "Select", new { @class = "form-control transparent" })
+                   @Html.ValidationMessageFor(m => m.PROCESS_MODEL_VALUE, "", new { @class = "text-error" })
+                   <br>
+               </td>
+           </tr>
+            <tr>
+                
+
+                <td>
+
+                    <input type="submit" value="Start Estimation" class="btn btn-lg btn-fad"/>
+                
+                </td>
+            </tr>
+        </table>
+     }
+
+       
+
+    </div>
+  
+
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </div>
+
+
+
+<div class="jumbotron-m" style="background-color:#FFFFFF; color:black; padding-left:5%; padding-right:5%;">
+
+    <h3 class="text-center" style="border-bottom:2px;">Let your project be within time and budget! </h3>
+
+    <hr style="height:2px;border:none;color:#b6b6b6;background-color:#b6b6b6" />
+
+    <div style="padding:10px 10% 10px 10%">
+
+        <h4 style="color:#0f3f6f">Why Estimation? </h4>
+        <p>
+            The most important part for making a successful software project is pre-planning and estimation. The software industry,
+            unfortunately, lacks effective project estimation. Your projects are;
+            <br />
+        </p>
+        <p style="padding-left:15px;">
+            &#8226 Somtimes not estimated well<br />
+            &#8226 The gained estimates are not used properly<br />
+            &#8226 The methods to determine the project progress are poor and lack real-time visibility and control<br />
+
+        </p>
+        <p>
+            Problems like under-estimation or over estimation occour which result in failure and low quality software products.
+            The unavailability of effective software estimation websites is another challenge. these websites are outdated or provide estimation with just one method.
+        </p>
+
+
+
+
+    </div>
+    <br />
+    <br />
+
+    <hr style="height:1px;border:none;color:#b6b6b6;background-color:#b6b6b6" />
+
+    <div class="row" style="padding:10px 8% 10px 8%">
+
+        <div class="col-lg-4">
+            <span style="color:#0f3f6f" class="glyphicon glyphicon-check"></span><br />
+            <h4 style="color:#0f3f6f">What Estimatior does? </h4>
+            <p>
+                Estimator has combined three different estimation tools to 
+                provide accommodation for different types of design processes that are 
+                being used today. The estimationm is done on different phases of design and implementation.
+            </p>
+        </div>
+         <div class="col-lg-4">
+            <span style="color:#0f3f6f" class="glyphicon glyphicon-list"></span><br />
+            <h4 style="color:#0f3f6f">Estimation techniques: </h4>
+             <p>
+                 The three estimation techniques used by estimator are 
+                 <b>COCMOI, COCOMOII</b> and <b>SLIM.</b> All
+                 three models provide beforehand estimation of size, effort, time and cost.
+                  So that your projects are on time and withen budget!
+
+             </p>
+        </div>
+         <div class="col-lg-4">
+            <span style="color:#0f3f6f" class="glyphicon glyphicon-question-sign"></span><br />
+            <h4 style="color:#0f3f6f">F.A.Q's </h4> 
+            <p>
+                How do I get started?<br />
+                What is COCOMOI ? <br />
+                What is COCOMOII? <br />
+                What is SLIM? <br />
+                @Html.ActionLink("Click here...", "FAQ", "Home")
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+    

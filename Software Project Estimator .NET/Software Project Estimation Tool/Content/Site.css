@@ -1,0 +1,531 @@
+﻿@import url('Site.css');
+body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+   
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+a.my-lnk {
+    color: #ffffff;
+}
+
+    a.my-lnk:active {
+        color: #F44336;
+    }
+
+    a.my-lnk:link {
+        color: #68efeb;
+    }
+
+    a.my-lnk:visited {
+        color: #68efeb;
+    }
+
+.btn-color {
+    background-color: #F44336;
+}
+
+
+.lg-back {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-image: url('/img/cocomo1-back.jpg');
+    /*background-color: #152534;*/
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+}
+
+
+
+.rounded-circle {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.jumbotron-m {
+    /*background-color: rgba(26, 36, 45, 0.90);*/
+    background-color: rgba(37, 105, 142, 0.65);
+    /*background-color:rgba(96, 80, 50, 0.90);*/
+    padding: 30px;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron-n {
+    /*background-color: rgba(49, 122, 46, 0.65);*/
+    background-color: rgba(133, 94, 33, 0.75);
+    padding: 30px;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.jumbotron-o {
+    /*background-color: rgba(26, 36, 45, 0.90);*/
+    background-color: rgba(0, 0, 0, 0.80);
+    padding: 30px;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.jumbotron-p {
+    /*background-color: rgba(49, 122, 46, 0.65);*/
+    background-color: rgba(33, 112, 29, 0.69);
+    padding: 30px;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron-l {
+    background-color: rgba(37, 105, 142, 0.64);
+    /*background-color: rgba(37, 105, 142, 0.80);*/
+    align-content: center;
+    /*border-radius: 10px 10px 70px 70px;*/
+    padding: 20px 40px 20px 40px;
+    margin: 0 auto;
+}
+
+
+.v {
+    margin-top:5%;
+    margin-left:70%;
+
+
+}
+
+.nav-color {
+    background-color: rgba(26, 36, 45, 0.90);
+    border-bottom: 0px;
+   
+}
+
+
+
+
+
+.text-blue {
+    background-color: #ffffff;
+    color: #1E5472;
+}
+
+
+.text-brown {
+    background-color: #ffffff;
+    color: #563D15;
+}
+
+
+
+.panel {
+    /* height: 270px;*/
+}
+
+.panel-body {
+    padding: 10px;
+}
+
+.panel-body {
+    padding: 13px;
+    text-align: justify;
+    /*  height: 150px;*/
+}
+
+.panel-footer {
+    background-color: white;
+    height: 22%;
+}
+
+
+
+
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+}
+
+.table-borderless {
+}
+
+
+.text-small {
+
+    font-size:15px;
+    width:10%;
+    height:5%;
+    
+
+}
+
+.text-error {
+    font-size: 11px;
+    color: #F44336;
+}
+
+.text-web {
+    font-family: Archivo-Regular;
+}
+
+
+
+ .text-justify{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.btn-fad {
+    color: #ffffff;
+    background-color: #FB6F3E;
+    border-radius: 10px 10px 10px 10px;
+   
+}
+
+    .btn-fad:hover {
+        color: #1A242D;
+        background-color: #ffffff;
+    }
+
+
+
+.btn-fad2 {
+    color: #ffffff;
+    background-color: #317A2E;
+    border-radius: 10px 10px 10px 10px;
+   
+}
+
+    .btn-fad2:hover {
+        color: #1A242D;
+        background-color: #ffffff;
+    }
+
+
+
+.btn-fad3 {
+    color: #ffffff;
+    background-color: rgb(133, 94, 33);
+    border-radius: 10px 10px 10px 10px;
+}
+
+    .btn-fad3:hover {
+        color: #1A242D;
+        background-color: #ffffff;
+    }
+
+
+.btn-fad4 {
+    color: #ffffff;
+    background-color: #FFAA1D;
+    border-radius: 10px 10px 10px 10px;
+}
+
+    .btn-fad4:hover {
+        color: #1A242D;
+        background-color: #ffffff;
+    }
+
+
+
+.btn-blue {
+    color: #ffffff;
+    background-color: #1E5472;
+    border-radius: 10px 10px 10px 10px;
+}
+
+    .btn-blue:hover {
+        color: #1A242D;
+        background-color: #ffffff;
+    }
+
+
+
+.btn-brown {
+    color: #ffffff;
+    background-color: #563D15;
+    border-radius: 10px 10px 10px 10px;
+}
+
+    .btn-brown:hover {
+        color: #1A242D;
+        background-color: #ffffff;
+    }
+
+
+.btn-default {
+    border-radius: 10px 10px 10px 10px;
+}
+
+.form-control {
+    border-radius: 10px 10px 10px 10px;
+}
+
+p {
+    text-align: justify;
+}
+
+.heading-color {
+    /*color:#ffc350;*/
+    color: #317A2E;
+    font-variant-caps: all-petite-caps;
+}
+.heading1-color {
+    /*color:#ffc350;*/
+    color: #ffffff;
+    font-variant-caps: all-petite-caps;
+}
+
+.heading2-color {
+    color: #6FAC89;
+    font-variant-caps: all-petite-caps;
+}
+
+
+@font-face {
+    font-family: 'Pasajero';
+    src: url('../fonts/Pasajero.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'ABOVE';
+    src: url('../fonts/ABOVE  - PERSONAL USE ONLY.ttf') format('truetype');
+}
+
+.center {
+    margin: auto;
+    width: 70%;
+    padding: 10px;
+
+}
+
+tr.noBorder td {
+    border: 0;
+}
+
+.inLine {
+    white-space: nowrap;
+}
+.number {
+    content: counter(inst);
+    background: rgba(30, 32, 33, 0.80);
+    color: #fff;
+    font-size: 1em;
+    font-weight: 700;
+    font-style: italic;
+    text-shadow: 1px 1px rgba(255, 150, 0, 0.5);
+    border-radius: 0.675em 0.675em 0.675em 0.675em;
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 0;
+    left: -5%;
+    top: -0.65em;
+    height: 1.35em;
+    width: 1.35em;
+    transition: all 0.2s ease-in-out;
+    z-index: -1;
+    border: 0;
+}
+
+
+.round2 {
+    width: 200px;
+    background-color: rgb(19, 62, 85);
+    color: #ffffff;
+    border-radius: 10px 70px 10px 70px;
+    text-align: match-parent;
+    padding-top: 10px;
+}
+
+.round3 {
+    width: 200px;
+    background-color: rgb(19, 62, 85);
+    color: #ffffff;
+    border-radius: 10px 70px 10px 70px;
+    text-align: match-parent;
+    padding-top: 10px;
+}
+
+
+.btn-default {
+    padding: 5px 10px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.panel-default {
+    border-radius: 10px 10px 10px 10px;
+    /*height: 390px;*/
+    color: #1A242D;
+}
+
+
+
+
+
+.navbar-inverse {
+    background-color: #ffffff;
+    border-color: #080808;
+}
+
+    .navbar-inverse .navbar-brand {
+        color: #FFAE42;
+    }
+
+        .navbar-inverse .navbar-brand:hover,
+        .navbar-inverse .navbar-brand:focus {
+            color: #ce5011;
+            background-color: transparent;
+        }
+
+    .navbar-inverse .navbar-text {
+        color: #999999;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #000000;
+    }
+
+        .navbar-inverse .navbar-nav > li > a:hover,
+        .navbar-inverse .navbar-nav > li > a:focus {
+            color: #ffffff;
+            background-color: #999999;
+        }
+
+    .navbar-inverse .navbar-nav > .active > a,
+    .navbar-inverse .navbar-nav > .active > a:hover,
+    .navbar-inverse .navbar-nav > .active > a:focus {
+        color: #ffffff;
+        background-color: #080808;
+    }
+
+    .navbar-inverse .navbar-toggle .icon-bar {
+        background-color: #329e11;
+    }
+
+
+.logo {
+    font-family: "Pasajero";
+    font-size: 25px;
+    color: #f44336;
+}
+
+@font-face {
+    font-family: 'ABOVE';
+    src: url('../fonts/ABOVE  - PERSONAL USE ONLY.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Shine Personal Use';
+    src: url('../fonts/Shine Personal Use.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Hemera II DEMO';
+    src: url('../fonts/Hemera II DEMO.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Pasajero';
+    src: url('../fonts/Pasajero.otf') format('opentype');
+}
+@font-face {
+    font-family: 'FallingSky';
+    src: url('../fonts/FallingSky.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Archivo-Regular';
+    src: url('../fonts/Archivo-Regular.ttf') format('truetype');
+}
+.HBackground {
+    background-color: #FB4322;
+    color: #ffffff;
+}
+
+.text-black {
+    color: #000000;
+}
+
+
+
+
+
+
+
+header {
+    margin: 0;
+    padding: 2em 5em 4em;
+    color: #ffffff;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+    header::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform: skewY(-4deg);
+        background: #000000;
+        transform-origin: bottom left;
+        z-index: -1;
+    }
+
+
+
+
+
+.h4-custom {
+    /*color: #23323B;*/
+    color:black;
+}

@@ -1,0 +1,213 @@
+﻿@model Software_Project_Estimation_Tool.Areas.COCOMOII.Models.ObjectPointsModel
+@{
+    ViewBag.Title = "ObjectPoints";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //if (Session["Model"] == null)
+    //{
+    //    Response.Redirect("~/Home/Index");
+    //}
+}
+
+
+<style>
+    .form-control {
+        text-align: center;
+        width: 70%;
+        height: 30px
+    }
+
+
+
+</style>
+
+
+
+<div class="jumbotron-n">
+    
+    <header>
+
+        <h2><b>OBJECT POINT (@Session["Model"])</b></h2>
+        <h4><i>Enter the values for given fields, according to your project.</i></h4>
+
+    </header>
+
+    <br />
+
+
+    <h4>Object points are a way of estimating effort size, similar to Source Lines Of Code (SLOC) or Function Points. 
+        They are not necessarily related to objects in Object-oriented programming, 
+        the objects referred to include screens, reports, and modules of the language.</h4>
+
+    
+    @using (Html.BeginForm())
+    {
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-4">
+
+
+                <table class="table table-responsive table-borderless">
+
+                    <tr>
+                        <th><h4><b> OBJECT TYPE</b></h4></th>
+                        <th><h4><b>TOTAL SCREENS/REPORTS </b></h4> </th>
+                        
+                    </tr>
+
+                    <tr>
+                        <td>Screens</td>
+                        <td>
+                            @Html.TextBoxFor(m => m.SCREEN_TOTAL, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.SCREEN_TOTAL, "", new { @class = "text-error" })
+                        </td>
+                       
+                        
+                       
+                    </tr>
+
+                    <tr>
+                        <td>Reports</td>
+                        <td>
+                            @Html.TextBoxFor(m => m.REPORT_TOTAL, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.REPORT_TOTAL, "", new { @class = "text-error" })
+                        </td>
+                       
+                    </tr>
+
+
+
+
+
+                </table>
+            </div>
+
+
+            <div class="col-md-6">
+
+
+                <table class="table table-responsive table-borderless">
+
+                    <tr>
+                        <th><h4><b>SIMPLE</b></h4> </th>
+                        <th><h4><b>MEDIUM</b></h4></th>
+                        <th><h4><b>DIFFICULT</b></h4></th>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            @Html.TextBoxFor(m => m.SCREEN_SIMPLE, new { @class = "form-control " })
+                            @Html.ValidationMessageFor(m => m.SCREEN_SIMPLE, "", new { @class = "text-error" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.SCREEN_MEDIUM, new { @class = "form-control " })
+                            @Html.ValidationMessageFor(m => m.SCREEN_MEDIUM, "", new { @class = "text-error" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.SCREEN_DIFFICULT, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.SCREEN_DIFFICULT, "", new { @class = "text-error" })
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+
+                        <td>
+                            @Html.TextBoxFor(m => m.REPORT_SIMPLE, new { @class = "form-control " })
+                            @Html.ValidationMessageFor(m => m.REPORT_SIMPLE, "", new { @class = "text-error" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.REPORT_MEDIUM, new { @class = "form-control " })
+                            @Html.ValidationMessageFor(m => m.REPORT_MEDIUM, "", new { @class = "text-error" })
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => m.REPORT_DIFFICULT, new { @class = "form-control " })
+                            @Html.ValidationMessageFor(m => m.REPORT_DIFFICULT, "", new { @class = "text-error" })
+                        </td>
+                    </tr>
+
+
+                </table>
+
+
+            </div>
+          
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+
+                <table class="table table-responsive table-borderless">
+
+
+             
+
+                  
+
+                   
+                    <tr>
+                        <td>
+                            <h4><b>3GL MODULES</b></h4>
+                            @Html.TextBoxFor(m => m.MODULE_3GL, new { @class = "form-control " })
+                            @Html.ValidationMessageFor(m => m.MODULE_3GL, "", new { @class = "text-error" })
+                        </td>
+
+                        <td><h4><b>REUSE PERCENTAGE</b></h4>
+                            @Html.TextBoxFor(m => m.REUSE_PERCENTAGE, new { @class = "form-control " })
+                            @Html.ValidationMessageFor(m => m.REUSE_PERCENTAGE, "", new { @class = "text-error" })
+                        </td>
+                    </tr>
+
+
+
+
+                </table>
+
+
+            </div>
+
+        </div>
+
+
+
+
+      <hr />
+        <input type="submit" value="Next Step" class="btn btn-fad2 btn-lg pull-right" />
+        <br />
+    }
+
+
+    @if (ViewBag.Exeption != null)
+    {
+       //<h4 style="color:#ff6a00"><i> *No. of Screens/Reports are not equal.</i></h4>
+        <script>
+    swal(
+        'Error',
+        'No. of Screens/Reports are not equal',
+        'error')
+
+        </script>
+
+    }
+
+
+
+
+
+
+
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+</div>

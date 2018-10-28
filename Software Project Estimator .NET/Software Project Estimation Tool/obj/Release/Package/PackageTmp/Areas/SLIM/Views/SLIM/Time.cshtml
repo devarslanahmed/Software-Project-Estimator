@@ -1,0 +1,65 @@
+﻿@model Software_Project_Estimation_Tool.Areas.SLIM.Models.TimeModel
+@{
+    ViewBag.Title = "Time";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //if (Session["resultUnadjustedFuctionPoints"] == null)
+    //{
+    //    Response.Redirect("~/Home/Index");
+    //}
+}
+
+
+<style>
+
+    .btn-default {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+
+<div class="jumbotron-p">
+
+    <header>
+        <h2><b>Time</b></h2>
+        <h4><i>Please enter your development time in months.</i></h4>
+
+    </header>
+
+    <br />  <br />
+
+    @using (Html.BeginForm())
+    {
+            <h4>
+                <b>TIME:</b>
+            </h4> 
+
+            <h4>@Html.TextBoxFor(m => m.month,"",new { @class = "form-control", @placeholder="Months" }) 
+            @Html.ValidationMessageFor(m => m.month, "", new { @class = "text-error" })
+
+        </h4>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <hr />
+        <input type="submit" value="Calculate" class="btn btn-lg btn-fad3 pull-right" />
+
+    }
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <br />
+    
+
+
+
+
+
+</div>

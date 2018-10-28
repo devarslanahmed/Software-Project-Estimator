@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Software_Project_Estimation_Tool.Models.Project>
+@{
+    ViewBag.Title = "Display";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron-m">
+
+
+    @foreach (var p in Model)
+    {
+
+        <div class="modal-dialog ">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+
+
+                <div class="modal-header" style="background-color: #1A242D; color:#ffffff;">
+                    <button type="button" class="close" style="background-color: #1A242D; color:#ffffff;" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-center text-blue" style="background-color: #1A242D; color:#ffffff;">@p.ProjectName</h4>
+                </div>
+
+
+                <div class="modal-body text-web text-black">
+
+
+                    <div class="container">
+                        <br />
+
+
+
+                        <div id="printable" class="">
+                            @{
+                                HtmlString msg = new HtmlString(p.ProjectCalculations.ToString());
+                                <p class="text-web text-center" style="text-align:justify;"> @msg  </p>
+
+                            }
+                        </div>
+
+                        <input type="button" class="btn btn-default pull-right" onclick="printDiv('printable')" value="Print" />
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>   
+    
+
+
+
+<script>
+    function printDiv(divName) {
+
+        var printContents = "<h1 class='text-center'>Software Project Estimator</h2> <h3 class='text-center'><u>Final Report</u></h3><br>";
+        printContents += document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+        window.location.reload();
+
+
+        document.body.innerHTML = originalContents;
+
+    }
+</script>
+
+
+
+
+

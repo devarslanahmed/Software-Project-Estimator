@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Publications";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<style>
+
+    .text-small {
+        width: 70%;
+    }
+
+
+    .lg-back {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        background-image: url('../../img/pila-de-libros-en-blanco_44527-49.jpg');
+        height: 100%;
+        width: 100%;
+        background-attachment: fixed;
+        position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #ffffff;
+    }
+
+
+    .jumbotron-m {
+        background-color: rgba(182, 136, 74, 0.61);
+        padding: 30px;
+        height: 100%;
+        width: 100%;
+        position: center;
+    }
+</style>
+
+
+<div class="jumbotron-m">
+
+    <header>
+
+        <h1><strong> Our Publications</strong></h1>
+    </header>
+    <br />
+    <br />
+
+    <div style="padding-left:5%; padding-right:5%; font-size:20px">
+        <ol>
+            <li>
+                An Empirical Analysis of Cost Estimation Models on Undergraduate Projects Using COCOMO II &nbsp&nbsp&nbsp
+                @*<a class="my-lnk" href="~/Docs/1570441131.pdf" target="_blank"><span class="glyphicon glyphicon-download-alt "></span></a>
+              <br />*@
+
+                @Html.ActionLink("Preview", "GetPaper","Home",null,new { @class="my-lnk", @target = "_blank" } )
+            
+            </li>
+            <li>
+                Acceptance Letter
+                @Html.ActionLink("Preview", "GetAcceptanceLetter", "Home", null, new { @class = "my-lnk", @target = "_blank" })
+
+            </li>
+            
+        </ol>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <br />
+
+    <br />
+
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <br />
+</div>

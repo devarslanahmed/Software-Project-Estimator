@@ -1,0 +1,75 @@
+﻿@model Software_Project_Estimation_Tool.Areas.SLIM.Models.ProcessProductivityModel
+@{
+    ViewBag.Title = "ProcessProductivity";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Session["Technique"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+}
+
+<style>
+   
+    .btn-default {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+
+<div class="jumbotron-p">
+
+    <header>
+        <h2><b>PROCESS PRODUCTIVITY</b></h2>
+        <h4><i>Please select your application type below.</i></h4>
+
+    </header>
+
+    <br /> 
+    <h4>
+        Process productivity (C), combines the effect of tools,
+        programming language, methods, quality assurance procedures, standards, type of software application, etc.
+        Process Productivity is calculated by Application Type as following: Microcode Firmware (ROM),
+        Real-time, embedded Radar Systems, Command and Control, Process Control, Telecommunications System and  Software Business Systems.
+    </h4>
+    <br />
+
+    @using (Html.BeginForm())
+    {
+        <h4 >
+            <b>APPLICATION TYPE:</b>
+        </h4>
+        <p>Which one of following system types <br /> your System fits in ? </p>
+        <h3>
+
+            @Html.DropDownListFor(m => m.APP_TYPE_VALUE, Model.APP_TYPE, "Select", new { @class = "btn btn-default btn-lg" })
+            @Html.ValidationMessageFor(m => m.APP_TYPE_VALUE, "", new { @class = "text-error" })
+
+        </h3>
+        
+        <br />
+        <br />
+        <br />
+        
+        <br />
+        <br />
+
+        <hr />
+        <input type="submit" value="Calculate" class="btn btn-lg btn-fad3 pull-right" />
+
+    }
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <br />
+
+
+
+
+
+</div>

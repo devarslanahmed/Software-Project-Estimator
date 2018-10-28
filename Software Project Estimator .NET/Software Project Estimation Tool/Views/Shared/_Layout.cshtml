@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Estimator </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+   
+    <script src="~/Alert Script/alert.js"></script>
+    <link href="~/Content/footer-distributed.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+</head>
+<body class="lg-back" style="overflow-x: hidden;" >
+    <div class="navbar navbar-inverse navbar-fixed-top nav-color" style="background-color:#ffffff;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                @Html.ActionLink("ESTIMATOR", "Index", "Home", new { area = "" }, new { @class = "logo navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+
+
+
+                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("FAQ", "FAQ", "Home", new { area = "" }, null)</li>
+
+                    <li>@Html.ActionLink("Publications", "Publications", "Home", new { area = "" }, null)</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+
+                    @if (Session["user"] == null)
+                    {
+                        /*       <li>
+                                  @Html.ActionLink("Login","Login", "Home", new { area = "" } ,new { @class = "glyphicon glyphicon-user" })
+                              </li>
+            */
+                        <li><a href="@Url.Action("Account", "Home",new { area = "" })"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+
+                    }
+                    else
+                    {
+                        <li><a href="@Url.Action("UserProfile", "Home",new { area = "" })"><span class="glyphicon glyphicon-user "></span> @Session["user"]</a></li>
+
+                        <li><a href="@Url.Action("logout", "Home",new { area = "" })"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+
+
+                    }
+
+
+
+
+                </ul>
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+    @RenderBody()
+
+
+    <footer class="footer-distributed"> 
+        <div class="footer-right">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+        </div>
+        <div class="footer-left">
+            <p class="footer-links">
+                <a href="@Url.Action("Index", "Home",new { area = "" })">Home</a>
+                |
+                <a href="@Url.Action("About", "Home",new { area = "" })">About</a>
+                |
+                <a href="@Url.Action("FAQ", "Home",new { area = "" })">Faq</a>
+                |
+                <a href="@Url.Action("Contact", "Home",new { area = "" })">Contact</a>
+            </p>
+            <p>Software Project Estimator &copy; 2018</p>
+        </div>
+    </footer>
+
+
+
+
+    @*<footer class="panel-footer" style="color:black; text-align:center;">
+        <p>&copy; @DateTime.Now.Year - Software Project Estimation Tool</p>
+    </footer>*@
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

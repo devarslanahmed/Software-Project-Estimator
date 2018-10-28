@@ -1,0 +1,171 @@
+﻿@model Software_Project_Estimation_Tool.Models.ProjectNameModel
+    @{
+        ViewBag.Title = "SelectTechnique";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+
+
+    <style>
+
+        .text-small {
+            width: 70%;
+        }
+
+
+        .lg-back {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            background-image: url('/img/homepage-back.jpg');
+            /*background-color: #152534;*/
+            height: 100%;
+            width: 100%;
+            background-attachment: fixed;
+            position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #ffffff;
+        }
+
+
+        .jumbotron-m {
+            background-color: rgba(39, 38, 38, 0.55);
+            padding: 30px;
+            height: 100%;
+            width: 100%;
+            position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .transparent {
+            opacity: .8;
+        }
+
+        .btn-lg {
+            background-color: #FF0000;
+        }
+    </style>
+
+
+
+
+
+
+    <script>
+        swal({
+            title: '<h4><strong>There are two best techniques for this process model, you can choose one!</strong><h2>',
+            type: 'question',
+            html:
+            '<h3 class="text-left">@Html.ActionLink("COCOMO II","Size","Home" , new { technique= "COCOMO2" }, new { @class = "btn btn-success" }) <span style="font-size:15px;">(Recomended)<span></h3>' +
+            '<h3 class="text-left">@Html.ActionLink("SLIM Model","Size","Home", new { technique= "SLIM" }, new { @class = "btn btn-warning" })</h3>',
+            showCancelButton: false,
+            showConfirmButton: false,
+            allowOutsideClick: false,
+
+        })
+    </script>
+
+
+
+    <div class="jumbotron-m">
+
+
+        <br />
+        <br />
+
+
+        <div class="row">
+            <div class="col-md-10">
+
+
+
+
+                <h1 style="font-size:400%; letter-spacing: 3px;">Your One Stop for<span> Software <br /> Project Estimation</span></h1>
+                <h5>Estimate your project's size, effort, development time and cost with three different techniques at different phases of SDLC.</h5>
+
+
+
+
+            </div>
+            <div class="col-md-6">
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <div align="right" style="padding-top:8%; padding-right:4%;">
+
+
+
+            @using (Html.BeginForm())
+            {
+                <table>
+                    <tr>
+                        <td>
+                            <h3 class="">Get Started</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.TextBoxFor(m => m.PROJECT_NAME, new { @class = "form-control transparent", @placeholder = "Your Project name" })
+                            @Html.ValidationMessageFor(m => m.PROJECT_NAME, "", new { @class = " text-error" })
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p>Select your design process model to process<br /> to the suitable estimation technique.</p>
+                            <h4>Process Model</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <select class="form-control transparent">
+                                <option value="Select">Select</option>
+                                <option value="saab">Water Fall</option>
+                                <option value="mercedes">prorotype</option>
+                                <option value="audi">incremental</option>
+
+                                <option value="mercedes">spiral</option>
+                                <option value="audi">agail</option>
+                            </select>
+
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+
+
+                        <td>
+
+                            <input type="submit" value="Start Estimation" class="btn btn-lg btn-fad" />
+
+                        </td>
+                    </tr>
+                </table>
+            }
+
+
+
+        </div>
+
+
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </div>

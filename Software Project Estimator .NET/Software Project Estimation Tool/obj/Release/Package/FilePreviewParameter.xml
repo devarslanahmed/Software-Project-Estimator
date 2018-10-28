@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="SoftwareProjectEstimator" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Arsalan\ Ahmed\\Desktop\\Software\ Project\ Estimator\\V\ 1\.3\ Software\ Project\ Estimator\\Software\ Project\ Estimation\ Tool\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Arsalan\ Ahmed\\Desktop\\Software\ Project\ Estimator\\V\ 1\.3\ Software\ Project\ Estimator\\Software\ Project\ Estimation\ Tool\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="SoftwareProjectEstimator/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Arsalan\ Ahmed\\Desktop\\Software\ Project\ Estimator\\V\ 1\.3\ Software\ Project\ Estimator\\Software\ Project\ Estimation\ Tool\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="SPEToolDBEntities-Web.config Connection String" description="" value="metadata=res://*/Models.DataBaseModel.csdl|res://*/Models.DataBaseModel.ssdl|res://*/Models.DataBaseModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=tcp:softwareprojectestimatordbserver.database.windows.net,1433;Initial Catalog=SoftwareProjectEstimator_db1;User Id=arslan@softwareprojectestimatordbserver;Password=A$123456&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Arsalan\ Ahmed\\Desktop\\Software\ Project\ Estimator\\V\ 1\.3\ Software\ Project\ Estimator\\Software\ Project\ Estimation\ Tool\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SPEToolDBEntities']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "COCOMOII";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //if (Session["Technique"] == null)
+    //{
+    //    Response.Redirect("~/Home/Index");
+    //}
+}
+
+
+
+
+
+
+
+<div class="jumbotron-n">
+
+    <div class="alert alert-info fade in alert-dismissible" style="margin-top:18px;">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+        <strong>Success!</strong> Project Size has been calculated. Please follow the next step from best suited estimstion technique: @Session["Technique"]
+    </div>
+
+
+
+    <header>
+
+        <h2><b>CONSTRUCTIVE COST MODEL (COCOMO II)</b></h2>
+
+    </header>
+
+    <br />
+    <br />
+ 
+    <h4  class="text-justify">Updated version of COCOMO, called COCOMO II, accounts for recent changes in software engineering technology, including object-oriented software, 
+    software created via spiral or evolutionary development models, software reuse and building new systems using off-the-shelf software components. 
+    There was a need to devote COCOMO II to meet the charging needs of the 1990 and the twenty-first century. 
+    COCOMO II was an effort that was started to update software cost estimation models. COCOMO II includes three-stage series of models:</h4>
+
+    <ol type="1">
+
+        <li>Application Composition Model</li>
+        <li>Early Design Model</li>
+        <li>Post Architecture</li>
+
+    </ol>
+
+
+    
+    <br />
+
+
+
+    <br />
+    <h4>You just have to choose a model according to your project requirements.<br />
+    The system will guide you at every step of the Estimation.</h4>
+    <br />
+    <hr />
+    @Html.ActionLink("Lets Get Start", "SelectModel", "COCOMOI", new { @class = "btn btn-lg btn-fad2 pull-right" })
+
+
+
+   
+
+    
+   
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+</div>

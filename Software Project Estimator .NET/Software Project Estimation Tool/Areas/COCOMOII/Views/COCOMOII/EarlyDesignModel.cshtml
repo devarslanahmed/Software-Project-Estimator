@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewBag.Title = "EarlyDesignModel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //if (Session["Technique"] == null)
+    //{
+    //    Response.Redirect("~/Home/Index");
+    //}
+}
+
+<style>
+    .btn-fad2 {
+    
+        width:5%;
+    
+    }
+
+    .text-small {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .panel-default {
+        border-radius: 50px 0px 50px 0px;
+    }
+
+</style>
+
+<div class="jumbotron-n">
+   
+
+    <header>
+
+        <h2><b>EARLY DESIGN MODEL</b></h2>
+
+
+    </header>
+
+    <br />
+    <br />
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="panel panel-default text-black">
+                
+                <div class="panel-body">
+
+
+                    <h3 class="text-center text-brown"><b>KILO LINE OF CODE (KLOC)</b></h3>
+                    <hr />
+
+
+                    <p class="text-small">
+                        1. Calculate Language Factor.<br />
+                        2. Calculate Function Point through Unadjusted Fuction Point and Value Adjustment Factor. <br />
+                        3. Calculate KLOC using: KLOC = UFP * VAF.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="panel panel-default text-black">
+                <div class="panel-body">
+
+                    <h3 class="text-center text-brown"><b>EFFORT ADJUSTMENT FACTOR</b></h3>
+                    <hr />
+
+                    <p class="text-small">
+                        1. Enter Product Factor, Personal Factor, Project Factor, and Platform Factor.<br />
+                        2. Calculate 15 Cost Drivers by entering different factors.<br />
+                        3. Calculate EAF by Taking product of all Cost Drivers.
+
+                    </p>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="panel panel-default text-black">
+                 <div class="panel-body">
+
+                     <h3 class="text-center text-brown"><b>EFFORT (EDM)</b></h3>
+                     <hr />
+                    <p class="text-small">
+
+                        1. Get calculated KLOC value.<br />
+                        2. Get Calculated EAF value.<br />
+                        3. Calculate Effort using E = 2.45 * KLOC * EAF.
+
+                    </p>
+                     <br />
+                </div>
+
+
+
+            </div>
+
+        </div>
+        @Html.ActionLink("Go", "CostDriversEDM", "COCOMOII", new { @class = "btn btn-fad2 btn-lg pull-right" })
+
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+</div>
+
+

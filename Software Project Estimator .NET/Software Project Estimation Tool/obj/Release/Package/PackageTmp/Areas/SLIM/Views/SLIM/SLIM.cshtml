@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "SLIM";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="jumbotron-p">
+
+
+    <div class="alert alert-info fade in alert-dismissible" style="margin-top:18px;">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+        <strong>Success!</strong> Project Size has been calculated. Please follow the next step from best suited estimstion technique: @Session["Technique"]
+    </div>
+
+
+
+    <header>
+
+        <h2><b>Software Lifecycle Management Model (SLIM)</b></h2>
+
+    </header>
+
+    <br />
+    <br />
+
+    <h4 class="text-justify">
+        SLIM is an automated costing system based on the Rayleigh-Putnam Model. SLIM applies the Putnam software model, linear programming, statistical simulation, and program evaluation and review technique (PERT) techniques to derive software project estimates. SLIM works reasonably well for very large systems, but seriously overestimates the effort for medium and small systems. Some versions of SLIM use a so-called skill factor β, which is a scaling term and is a function of project size.
+
+        Software Lifecycle Management Model contains three phases:
+    </h4>
+
+    <br />
+
+    <ol type="1">
+        <li>Process Productivity</li>
+        <li>Size in LOC</li>
+        <li>Manpower Equation</li>
+    </ol>
+
+
+
+
+
+
+    <br />
+    <br />
+
+    <h4>
+        You just have to choose a model according to your project requirements.<br />
+        The system will guide you at every step of the Estimation.
+    </h4>
+    <br />
+    <hr />
+    @Html.ActionLink("Lets Get Start", "ProcessProductivity", "COCOMOI", new { @class = "btn btn-lg btn-fad3 pull-right" })
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+
+</div>
+
+

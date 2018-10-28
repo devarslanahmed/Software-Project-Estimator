@@ -1,0 +1,1156 @@
+﻿
+@{
+    ViewBag.Title = "FAQ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .anchor {
+        padding-top: 70px;
+    }
+
+
+    .lg-back {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        background-image: url('../../img/faq/692490-full-size-question-mark-wallpapers-2886x1747-image.png');
+        height: 100%;
+        width: 100%;
+        background-attachment: fixed;
+        position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #ffffff;
+    }
+
+
+    .jumbotron-m {
+        background-color: rgba(255, 255, 255, 0.85);
+        padding: 30px;
+        height: 100%;
+        width: 100%;
+        position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+       
+    }
+
+
+
+</style>
+
+<div class="jumbotron-m" id="page_content" style=" color:black;top:50px; padding:4% 10% 2% 10%;">
+    <h2><a name="top">Table of Contents</a></h2>
+    <ol style="font-size:16px;">
+
+        <li><a href="#1"><strong>How do I get started?</strong></a></li>
+        <li><a href="#2"><strong>What is COCOMO I?</strong></a></li>
+        <li><a href="#3"><strong>What is COCOMO II?</strong></a></li>
+        <li><a href="#4"><strong>What is SLIM?</strong></a></li>
+        <li><a href="#5"><strong>What is Unadjusted Function Point?</strong></a></li>
+        <li><a href="#6"><strong>What are External Inputs?</strong></a></li>
+        <li><a href="#7"><strong>What are External Outputs?</strong></a></li>
+        <li><a href="#8"><strong>What are External Inquiries?</strong></a></li>
+        <li><a href="#9"><strong>What are External Interface Files?</strong></a></li>
+        <li><a href="#10"><strong>What are Internal Logical Files?</strong></a></li>
+        <li><a href="#11"><strong>What is Value Adjustement Factor?</strong></a></li>
+        <li><a href="#12"><strong>What is Function Point and how to calculate Size by using it, for all techniques?</strong></a></li>
+        <li><a href="#13"><strong>How to calculate Effort for Basic COCOMO I?</strong></a></li>
+        <li><a href="#14"><strong>What are 15 Cost Drivers?</strong></a></li>
+        <li><a href="#15"><strong>How to calculate Effort for Intermediate COCOMO I?</strong></a></li>
+        <li><a href="#16"><strong>How to calculate Development Time for Intermediate COCOMO I?</strong></a></li>
+        <li><a href="#17"><strong>What does mean by Effort Adjustment for 4 phases?</strong></a></li>
+        <li><a href="#18"><strong>How to calculate Total Effort and Effort for 4 phases, for Advanced COCOMO I?</strong></a></li>
+        <li><a href="#19"><strong>How to calculate Total Development Time and Development Time for 4 phases, for Advanced COCOMO I?</strong></a></li>
+        <li><a href="#20"><strong>How to calculate New Object Point?</strong></a></li>
+        <li><a href="#21"><strong>What does mean by Screen?</strong></a></li>
+        <li><a href="#22"><strong>What does mean by Reports?</strong></a></li>
+        <li><a href="#23"><strong>What are 3GL Modules?</strong></a></li>
+        <li><a href="#24"><strong>What does mean by Reuse Percentage?</strong></a></li>
+        <li><a href="#25"><strong>How to calculate Productivity Rate?</strong></a></li>
+        <li><a href="#26"><strong>How to calculate Effort for Application Composition Model COCOMO II?</strong></a></li>
+        <li><a href="#27"><strong>What is Language Factor?</strong></a></li>
+        <li><a href="#28"><strong>What are 7 Cost Drivers?</strong></a></li>
+        <li><a href="#29"><strong>How to calculate Scale Components?</strong></a></li>
+        <li><a href="#30"><strong>How to calculate Effort for Early Design Model COCOMO II?</strong></a></li>
+        <li><a href="#31"><strong>How to calculate Development Time for Early Design Model COCOMO II?</strong></a></li>
+        <li><a href="#32"><strong>What are 17 Cost Drivers?</strong></a></li> 
+        <li><a href="#33"><strong>How to calculate Total Effort and Effort for 5 phases, for Post Architecture Model COCOMO II?</strong></a></li>
+        <li><a href="#34"><strong>How to calculate Total Development Time for Post Architecture Model COCOMO II?</strong></a></li>
+        <li><a href="#35"><strong>How to calculate Process Productivity?</strong></a></li>
+        <li><a href="#36"><strong>How to calculate Development Time for SLIM?</strong></a></li>
+        <li><a href="#37"><strong>How to calculate Total Effort for SLIM?</strong></a></li>
+        <li><a href="#38"><strong>How to calculate Effort at Delivery Time for SLIM?</strong></a></li>
+        <li><a href="#39"><strong>How to calculate Manpower Build Up Equation for SLIM?</strong></a></li>
+        <li><a href="#40"><strong>How to calculate Cost for all techniques?</strong></a></li>
+        <li><a href="#41"><strong>How many techniques i can use at a time?</strong></a></li>
+        <li><a href="#42"><strong>What does mean by person-month unit?</strong></a></li>
+        <li><a href="#43"><strong>What does mean by KLOC?</strong></a></li>
+        <li><a href="#44"><strong>What does mean by SLOC?</strong></a></li>
+        <li><a href="#45"><strong>What does mean by Staffing and how to calculate it?</strong></a></li>
+        
+
+    </ol>
+
+    <br />
+    <br />
+
+    <hr>
+    <h3><a class="anchor" name="1">1. How do I get started?</a></h3>
+    <p>Just enter your project name and select your process model to start estimating your project.</p>
+    <h5><a href="#top">Back to Top</a></h5>
+   
+
+    <br />
+    <br /> 
+    <hr>
+    <h3><a name="2" class="anchor">2. What is COCOMO I?</a></h3>
+    <p>The COCOMO (Constructive Cost Estimation Model) is proposed by
+        <strong>DR. Berry Boehm in 1981</strong>
+        and that's why it is also known as COCOMO'81. It is a method for evaluating the cost of a software package. According to him software cost estimation should be done through three stages:
+        <ol>
+            <li>Basic COCOMO Model</li>
+            <li>Intermediate COCOMO Model</li>
+            <li>Advance/Detailed COCOMO Model</li>
+        </ol>
+        
+        <img src="~/img/faq/COCOMO1.gif" border="0" height="130" width="315"/>
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+    
+
+    <br />
+    <br />
+    
+    <hr>
+    <h3> <a name="3" class="anchor">3. What is COCOMO II?</a></h3>
+    <p>
+        COCOMO II is tuned to modern software life cycles. The original COCOMO model has been very successful, but it doesn't apply to newer software development practices as well as it does to traditional practices. COCOMO II targets modern software projects, and will continue to evolve over the next few years.
+        <br />
+        COCOMO II has three different sub-models:
+
+        <ol>
+            <li>
+                <strong>The Application Composition Model:</strong>
+                Suitable for projects built with modern GUI-builder tools. Based on new Object Points.
+            </li>
+            <li>
+                <strong>The Early Design Model:</strong>
+                You can use this model to get rough estimates of a project's cost and duration before you've determined it's entire architecture. It uses a small set of new Cost Drivers, and new estimating equations. Based on Unadjusted Function Points or KSLOC.
+
+            </li>
+            <li>
+                <strong>The Post-Architecture Model:</strong>
+                This is the most detailed COCOMO II model. You'll use it after you've developed your project's overall architecture. It has new cost drivers, new line counting rules, and new equations.
+
+            </li>
+            
+        </ol>
+        
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+   
+    
+
+    <br />
+    <br />
+    
+    <hr>
+    <h3>
+         <a name="4" class="anchor">
+             4. What is SLIM?
+        </a>
+    </h3>
+    <p>
+        <strong>Software Lifecycle Management (SLIM):</strong> 
+        SLIM is an automated costing system based on the Rayleigh-Putnam Model. SLIM applies the Putnam software model, linear programming, statistical simulation, and program evaluation and review technique (PERT) techniques to derive software project estimates. SLIM product family are built upon the concept of Productivity Index (PI). PI is a high-level measure of a development team’s ability to produce software. PI is calculated from a project’s size, time, effort and application complexity.
+
+
+    </p>
+
+    <h5><a href="#top">Back to Top</a></h5>
+    
+    
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="5">5. What is Unadjusted Function Point?</a></h3>
+    <p>The FPA measures functionality that the user requires. The specific user functionality is a measurement of the functionality delivered by the application as for user request. The 5 function types identified are
+    <ol>
+        <li>External Inputs</li>
+        <li>External Outputs</li>
+        <li>External Inquiries</li>
+        <li> External Interface File</li>
+        <li> Internal Logical Files</li>
+    </ol>
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+   
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="6">6. What are External Inputs?</a></h3>
+    <p>An elementary process in which data crosses the boundary from outside to inside.  This data may come from a data input screen or another application. The data may be used to maintain one or more internal logical files.  The data can be either control information or business information.  If the data is control information it does not have to update an internal logical file.  The graphic represents a simple EI that updates 2 ILF's.</p>
+    <img src="~/img/faq/ei.gif" border="0" height="130" width="315" />
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="7">7. What are External Outputs?</a></h3>
+    <p>An elementary process in which derived data passes across the boundary from inside to outside.   Additionally, an EO may update an ILF.  The data creates reports or output files sent to other applications.  These reports and files are created from one or more internal logical files and external interface file.  The following graphic represents on EO with 2 FTR's there is derived information (green) that has been derived from the ILF's.</p>
+    <img src="~/img/faq/eo.gif" border="0" height="130" width="315" />
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="8">8. What are External Inquiries?</a></h3>
+    <p>An elementary process with both input and output components that result in data retrieval from one or more internal logical files and external interface files.  The input process does not update any Internal Logical Files, and the output side does not contain derived data. The graphic below represents an EQ with two ILF's and no derived data.</p>
+    <img src="~/img/faq/eq.gif" border="0" height="130" width="315" />
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="9">9. What are External Interface Files?</a></h3>
+    <p>A user identifiable group of logically related data that is used for reference purposes only. The data resides entirely outside the application and is maintained by another application. The external interface file is an internal logical file for another application.</p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="10">10. What are Internal Logical Files?</a></h3>
+    <p>A user identifiable group of logically related data that resides entirely within the applications boundary and is maintained through external inputs.</p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="11">11. What is Value Adjustement Factor?</a></h3>
+    <p>The value adjustment factor (VAF) is based on 14 general system characteristics (GSC's) that rate the general functionality of the application being counted. Each characteristic has associated descriptions that help determine the degrees of influence of the characteristics. The degrees of influence range on a scale of zero to five, from no influence to strong influence. The IFPUG Counting Practices Manual provides detailed evaluation criteria for each of the GSC'S, the table below is intended to provide an overview of each GSC.</p>
+   
+    <table border="1" cellspacing="1" cellpadding="7" width="565">
+        <tbody>
+            <tr>
+                <td width="41%" colspan="2" valign="top" class="font">
+                    General System
+                    Characteristic
+                </td>
+                <td width="59%" valign="top"><p align="center" class="font">Brief Description</p></td>
+            </tr>
+            <tr>
+                <td width="7%" valign="top" class="font">1.</td>
+                <td width="34%" valign="top" class="font">Data communications</td>
+                <td width="59%" valign="top" class="font">
+                    How many communication facilities
+                    are there to aid in the transfer or exchange of information with the
+                    application or system?
+                </td>
+            </tr>
+            <tr>
+                <td width="7%" valign="top" class="font">2.</td>
+                <td width="34%" valign="top" class="font">Distributed data processing</td>
+                <td width="59%" valign="top" class="font">
+                    How are distributed data and
+                    processing functions handled?
+                </td>
+            </tr>
+            <tr>
+                <td width="7%" valign="top" class="font">3.</td>
+                <td width="34%" valign="top" class="font">Performance</td>
+                <td width="59%" valign="top" class="font">
+                    Was response time or throughput
+                    required by the user?
+                </td>
+            </tr>
+            <tr>
+                <td width="7%" valign="top" class="font">4.</td>
+                <td width="34%" valign="top" class="font">Heavily used configuration</td>
+                <td width="59%" valign="top" class="font">
+                    How heavily used is the current
+                    hardware platform where the application will be executed?
+                </td>
+            </tr>
+            <tr>
+                <td width="7%" valign="top" class="font">5.</td>
+                <td width="34%" valign="top" class="font">Transaction rate</td>
+                <td width="59%" valign="top" class="font">
+                    How frequently are transactions
+                    executed daily, weekly, monthly, etc.?
+                </td>
+            </tr>
+            <tr>
+                <td width="7%" valign="top" class="font">6.</td>
+                <td width="34%" valign="top" class="font">On-Line data entry</td>
+                <td width="59%" valign="top" class="font">
+                    What percentage of the information
+                    is entered On-Line?
+                </td>
+            </tr>
+            <tr>
+                <td width="7%" valign="top" class="font">7.</td>
+                <td width="34%" valign="top" class="font">End-user efficiency</td>
+                <td width="59%" valign="top" class="font">
+                    Was the application designed
+                    for end-user efficiency?
+                </td>
+            </tr>
+            <tr>
+                <td width="7%" valign="top" class="font">8.</td>
+                <td width="34%" valign="top" class="font">On-Line update</td>
+                <td width="59%" valign="top" class="font">
+                    How many ILF’s are updated
+                    by On-Line transaction?
+                </td>
+            </tr>
+            <tr>
+                <td width="7%" valign="top" class="font">9.</td>
+                <td width="34%" valign="top" class="font">Complex processing</td>
+                <td width="59%" valign="top" class="font">
+                    Does the application have
+                    extensive logical or mathematical processing?
+                </td>
+            </tr>
+            <tr>
+                <td width="7%" valign="top" class="font">10.</td>
+                <td width="34%" valign="top" class="font">Reusability</td>
+                <td width="59%" valign="top" class="font">
+                    Was the application developed
+                    to meet one or many user’s needs?
+                </td>
+            </tr>
+            <tr>
+                <td width="7%" valign="top" class="font">11.</td>
+                <td width="34%" valign="top" class="font">Installation ease</td>
+                <td width="59%" valign="top" class="font">
+                    How difficult is conversion
+                    and installation?
+                </td>
+            </tr>
+            <tr>
+                <td width="7%" valign="top" class="font">12.</td>
+                <td width="34%" valign="top" class="font">Operational ease</td>
+                <td width="59%" valign="top" class="font">
+                    How effective and/or automated
+                    are start-up, back-up, and recovery procedures?
+                </td>
+            </tr>
+            <tr>
+                <td width="7%" valign="top" class="font">13.</td>
+                <td width="34%" valign="top" class="font">Multiple sites</td>
+                <td width="59%" valign="top" class="font">
+                    Was the application specifically
+                    designed, developed, and supported to be installed at multiple sites
+                    for multiple organizations?
+                </td>
+            </tr>
+            <tr>
+                <td width="7%" valign="top" class="font">14.</td>
+                <td width="34%" valign="top" class="font">Facilitate change</td>
+                <td width="59%" valign="top" class="font">
+                    Was the application specifically
+                    designed, developed, and supported to facilitate change?
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="12">12. What is Function Point and how to calculate Size by using it, for all techniques?</a></h3>
+    <h4>Function Point Analysis</h4>
+    <p>Software systems, unless they are thoroughly understood, can be like an ice berg. They are becoming more and more difficult to understand. Improvement of coding tools allows software developers to produce large amounts of software to meet an ever expanding need from users. As systems grow a method to understand and communicate size needs to be used. Function Point Analysis is a structured technique of problem solving. It is a method to break systems into smaller components, so they can be better understood and analyzed.
+       Function points are a unit measure for software much like an hour is to measuring time, miles are to measuring distance or Celsius is to measuring temperature.  Function Points are an ordinal measure much like other measures such as kilometers, Fahrenheit, hours, so on and so forth.
+    It has three main components;<br />
+        <ol>
+            <li>Unadjusted Function Point (UFP)</li>
+            <li>Value Adjustment Factor (VAF)</li>
+            <li>Language Factor (LF)</li>
+        </ol>
+    </p>
+   <h4>How to calculate Size</h4>
+    <p>
+       The Size will be calculated in KLOC by using this formula:<br />
+        <b> FP = (UFP * VAF * LF) / 1000</b>
+    </p>
+
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="13">13. How to calculate Effort for Basic COCOMO I?</a></h3>
+    <p>The Effort will be calculated in person-month by using this formula:<br />
+
+        <b> Effort = a * (Size in KLOC) ^ b </b><br /><br />
+    where 'a' and 'b' are the constant values that are depends on, the selected mode of COCOMO I, i.e. Organic Mode, Semidetached Mode, Embedded Mode. <br />
+    Size in KLOC is calculated by using Function Point.
+    
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="14">14. What are 15 Cost Drivers?</a></h3>
+    <p>
+
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="15">15. How to calculate Effort for Intermediate COCOMO I?</a></h3>
+    <p>
+        The Effort will be calculated in person-month by using this formula:<br />
+
+        <b> Effort = a * (Size in KLOC) ^ b * EAF</b><br /><br />
+        where 'a' and 'b' are the constant values that are depends on, the selected mode of COCOMO I, i.e. Organic Mode, Semidetached Mode, Embedded Mode. <br />
+        Size in KLOC is calculated by using Function Point and EAF is Effort Adjustment Factor which is calculatd using 15 Cost Drivers. 
+
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="16">16. How to calculate Development Time for Intermediate COCOMO I?</a></h3>
+    <p>
+        The Development Time will be calculated in months by using this formula:<br />
+
+        <b> Development Time = c * (Effort) ^ d </b><br /><br />
+        where 'c' and 'd' are the constant values that are depends on, the selected mode of COCOMO I, i.e. Organic Mode, Semidetached Mode, Embedded Mode. <br />
+        Effort is calculated by using Size in KLOC.
+
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="17">17. What does mean by Effort Adjustment for 4 phases?</a></h3>
+  
+    <p>
+
+        Calculating Effort Adjustment Factor for 4 phases
+        <ol>
+            <li>Requirements planning and product design (RPD)</li>
+            <li>Detailed design (DD)</li>
+            <li>Code and unit test (CUT)</li>
+            <li>Integration and test (IT)</li>
+        </ol>
+
+    </p>
+
+
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="18">18. How to calculate Total Effort and Effort for 4 phases, for Advanced COCOMO I?</a></h3>
+    <p>
+
+        The Effort will be calculated in person-month by using this formula:<br />
+
+        <b> Effort = a * (Size in KLOC) ^ b * EAF</b><br /><br />
+        where 'a' and 'b' are the constant values that are depends on, the selected mode of COCOMO I, i.e. Organic Mode, Semidetached Mode, Embedded Mode. <br />
+        Size in KLOC is calculated by using Function Point and EAF is Effort Adjustment Factor which is calculatd using 15 Cost Drivers. <br />
+
+        The Total Effort will be distributed in 4 phases and multiplied with constant values:
+        <ol>
+            <li><b>Requirements planning and product design (RPD) = Total Effort * 0.16 </b></li>
+            <li><b>Detailed design (DD) = Total Effort * 0.26</b></li>
+            <li><b>Code and unit test (CUT) = Total Effort * 0.42</b></li>
+            <li><b>Integration and test (IT) = Total Effort * 0.16</b></li>
+        </ol>
+
+    
+
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="19">19. How to calculate Total Development Time and Development Time for 4 phases, for Advanced COCOMO I?</a></h3>
+    <p>
+
+        The Development Time will be calculated in months by using this formula:<br />
+
+        <b> Development Time = c * (Effort) ^ d </b><br /><br />
+        where 'c' and 'd' are the constant values that are depends on, the selected mode of COCOMO I, i.e. Organic Mode, Semidetached Mode, Embedded Mode. <br />
+        Effort is calculated by using Size in KLOC. <br />
+
+        The Total Development Time will be distributed in 4 phases and multiplied with constant values:
+        <ol>
+            <li><b>Requirements planning and product design (RPD) = Total Development Time * 0.19 </b></li>
+            <li><b>Detailed design (DD) = Total Development Time * 0.24</b></li>
+            <li><b>Code and unit test (CUT) = Total Development Time * 0.39</b></li>
+            <li><b>Integration and test (IT) = Total Development Time * 0.18</b></li>
+        </ol>
+
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="20">20. How to calculate New Object Point?</a></h3>
+    
+    <h4>Object Point</h4>
+    <p>Object points are an approach used in software development effort estimation under some models such as COCOMO II. Object points are a way of estimating effort size, similar to Source Lines Of Code (SLOC) or Function Points. They are not necessarily related to objects in Object-oriented programming, the objects referred to include screens, reports, and modules of the language. The number of raw objects and complexity of each are estimated and a weighted total Object-Point count is then computed and used to base estimates of the effort needed.</p>
+  
+    <h4>New Object Point Calculation</h4>
+    <p>Estimate the number of screens, reports and 3 GL components that will comprise this application.</p>
+   
+    <b>Classification of complexity levels</b>
+    <p>We have to classify each object instance (depending on values of its characteristics) into:
+    <ol>
+        <li>Simple</li>
+        <li>Medium</li>
+        <li>Difficult</li>
+    </ol>
+    </p>
+    <b>Assign complexity weight to each object</b>
+    <p>
+        The weights are used for three object types:
+        <ol>
+            <li>Screen</li>
+            <li>Report</li>
+            <li>3GL Components</li>
+        </ol>
+    </p>
+
+    <b>Determine object points</b>
+    <p>
+        Add all the weighted object instances to get one number and this known as object-point count.
+    </p>
+
+    <b>Compute new object points</b>
+    <p>We have to estimate the percentage of reuse to be achieved in a project. Depending on the percentage reuse, the new object points (NOP) are computed.<br />
+    
+
+    <b>New Object Point = Object Points * (100 - Reuse Percentage) / 100</b>
+
+    </p>
+
+
+
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="21">21. What does mean by Screens?</a></h3>
+    <p>Total no of Screens used in project, which are classified as:
+        <ol>
+            <li>Simple</li>
+            <li>Medium</li>
+            <li>Difficult</li>
+        </ol>
+       e.g. A Android Application has 26 activites or A Website has 30 pages.
+
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="22">22. What does mean by Reports?</a></h3>
+    <p>Total no of Reports used in project, which are classified as:
+<ol>
+    <li>Simple</li>
+    <li>Medium</li>
+    <li>Difficult</li>
+</ol>
+       e.g. Software Project Estimator generates 3 reports for COCOMO I. </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="23">23. What are 3GL Modules?</a></h3>
+    <p>Count the number of modules that have to be developed<br />
+    e.g. Software Project Estimator has 2 modules, Cost Estimation and Account Management.</p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="24">24. What does mean by Reuse Percentage?</a></h3>
+    <p>There are some modules are used in more then one place to perform same task thats called reused modules, counting the total modules as in percentage called reuse percentage.</p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="25">25. How to calculate Productivity Rate?</a></h3>
+    <p>Productivity rate is calculated by Developers Experience and Capability, which is rated from Very Low to Very High by the user.
+    The weights behind the values are:
+    <ol>
+        <li>Very Low = 4</li>
+        <li>Low = 7</li>
+        <li>Nominal = 13</li>
+        <li>High = 25</li>
+        <li>Very High = 50</li>
+    </ol>
+    
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="26">26. How to calculate Effort for Application Composition Model COCOMO II?</a></h3>
+    <p>The Effort will be calculated in person-month using this formula:<br />
+    <b>Effort = New Object Point / Productivity Rate</b>
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="27">27. What is Language Factor?</a></h3>
+    <p>The Fact of programming language in project estimation called language Factor, each language assigned a vlue that multiplied with size of the project.</p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="28">28. What are 7 Cost Drivers?</a></h3>
+    <p>The Early Design Model of COCOMO II is adjusted using a set of 7 cost drivers, are following:<br />
+
+    <table border="1" cellspacing="1" cellpadding="7" width="565">
+        <tbody>
+            <tr>
+                <td valign="top" width="77"><strong>Attribute</strong></td>
+                <td valign="top" width="274"><strong>Description</strong></td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">RCPX</td>
+                <td valign="top" width="274">Product Reliability and Complexity</td>
+            </tr>
+
+            <tr>
+                <td valign="top" width="77">RUSE</td>
+                <td valign="top" width="274">Required Reuse</td>
+            </tr>
+
+            <tr>
+                <td valign="top" width="77">PDIF</td>
+                <td valign="top" width="274">Platform Difficulty</td>
+            </tr>
+
+            <tr>
+                <td valign="top" width="77">PERS</td>
+                <td valign="top" width="274">Personnel Capability</td>
+            </tr>
+
+            <tr>
+                <td valign="top" width="77">PREX</td>
+                <td valign="top" width="274">Personnel Experience</td>
+            </tr>
+
+            <tr>
+                <td valign="top" width="77">FCIL</td>
+                <td valign="top" width="274">Facilities</td>
+            </tr>
+
+            <tr>
+                <td valign="top" width="77">SCED</td>
+                <td valign="top" width="274">Schedule</td>
+            </tr>
+
+
+        </tbody>
+
+
+
+    </table>
+
+</p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <hr>
+    <h3><a class="anchor" name="29">29. How to calculate Scale Components?</a></h3>
+    <p>
+        The scalling components are:
+        <ol>
+            <li>Precedentedness</li>
+            <li>Development/Flexibility</li>
+            <li>Architecture/Risk Resolution</li>
+            <li>Team Cohesion</li>
+            <li>Process Maturity</li>
+           
+        </ol>
+    </p>
+    <p>All the scaling factors are rated from Very Low to Very High. Adding all factors weights and multiply with constant values as:<br />
+        
+    <b>Scalling Factor (B) = 0.91 + 0.01 * (Sum of rating on scaling factors for the project)</b>
+
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="30">30. How to calculate Effort for Early Design Model COCOMO II?</a></h3>
+    <p>
+        The Effort will be calculated in person-month by using this formula:<br />
+
+        <b> Effort = 2.5 * (Size) ^ Scaling Factor * EAF</b><br /><br />
+        where '2.5' is the constant value, Size is calculated by using Function Point and Language Factor, EAF is Effort Adjustment Factor which is calculatd using 7 Cost Drivers of Early Design Model. <br />
+
+
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="31">31. How to calculate Development Time for Early Design Model COCOMO II?</a></h3>
+    <p>
+
+        The Development Time will be calculated in months by using this formula:<br />
+
+        <b> Development Time = 3 * (Effort) ^ (0.33 + 0.2 * (Scaling Factor - 1.01))</b><br /><br />
+        where '3', '0.33', '0.2', and '1.01' are the constant values, Effort and Scaling Factor are calculted above.<br />
+
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="32">32. What are 17 Cost Drivers?</a></h3>
+    <p>
+        The Post Architecture Model of COCOMO II is adjusted using a set of attributes (17 project cost drivers) that reflect:<br />
+
+        <ol>
+            <li>Product characteristics such as the required system reliability and product complexity.</li>
+            <li>Computer characteristics such as execution time or memory constraints. These are constraints imposed on the software by the hardware platform.</li>
+            <li>Personnel characteristics such as programming language skills that take the experience and capabilities of the people working on the project into account.</li>
+            <li>Project characteristics of the software development project such as the IDE that is available and the development schedule.</li>
+        </ol>
+
+        The following table shows all 17 of the project cost drivers that may be taken into consideration.
+    </p>
+
+    <table border="1" cellspacing="1" cellpadding="7" width="565">
+        <tbody>
+            <tr>
+                <td valign="top" width="77"><strong>Attribute</strong></td>
+                <td valign="top" width="114"><strong>Type</strong></td>
+                <td valign="top" width="274"><strong>Description</strong></td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">RELY</td>
+                <td valign="top" width="114">Product</td>
+                <td valign="top" width="274">Required system reliability</td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">CPLX</td>
+                <td valign="top" width="114">Product</td>
+                <td valign="top" width="274">Complexity of system modules</td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">DOCU</td>
+                <td valign="top" width="114">Product</td>
+                <td valign="top" width="274">Extent of documentation required</td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">DATA</td>
+                <td valign="top" width="114">Product</td>
+                <td valign="top" width="274">Size of database used</td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">RUSE</td>
+                <td valign="top" width="114">Product</td>
+                <td valign="top" width="274">Required percentage of reusable components</td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">TIME</td>
+                <td valign="top" width="114">Computer</td>
+                <td valign="top" width="274">Execution time constraint</td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">PVOL</td>
+                <td valign="top" width="114">Computer</td>
+                <td valign="top" width="274">Volatility of development platform</td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">STOR</td>
+                <td valign="top" width="114">Computer</td>
+                <td valign="top" width="274">Memory constraints</td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">ACAP</td>
+                <td valign="top" width="114">Personnel</td>
+                <td valign="top" width="274">Capability of project analysts</td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">PCON</td>
+                <td valign="top" width="114">Personnel</td>
+                <td valign="top" width="274">Personnel continuity</td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">PCAP</td>
+                <td valign="top" width="114">Personnel</td>
+                <td valign="top" width="274">Programmer capability</td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">PEXP</td>
+                <td valign="top" width="114">Personnel</td>
+                <td valign="top" width="274">Programmer experience in project domain</td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">AEXP</td>
+                <td valign="top" width="114">Personnel</td>
+                <td valign="top" width="274">Analyst experience in project domain</td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">LTEX</td>
+                <td valign="top" width="114">Personnel</td>
+                <td valign="top" width="274">Language and tool experience</td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">TOOL</td>
+                <td valign="top" width="114">Project</td>
+                <td valign="top" width="274">Use of software tools</td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">SCED</td>
+                <td valign="top" width="114">Project</td>
+                <td valign="top" width="274">Development schedule compression</td>
+            </tr>
+            <tr>
+                <td valign="top" width="77">SITE</td>
+                <td valign="top" width="114">Project</td>
+                <td valign="top" width="274">Extent of multisite working and quality of inter-site communications</td>
+            </tr>
+        </tbody>
+    </table>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="33">33. How to calculate Total Effort and Effort for 5 phases, for Post Architecture Model COCOMO II?</a></h3>
+    <p>
+
+        The Effort will be calculated in person-month by using this formula:<br />
+
+        <b> Effort = 2.5 * (Size) ^ Scaling Factor * EAF</b><br /><br />
+        where '2.5' is the constant value, Size is calculated by using Function Point and Language Factor, EAF is Effort Adjustment Factor which is calculatd using 17 Cost Drivers of Post Architecture Model. <br />
+
+        In Post Architecture Model we will calculate Effort for 5 phases, are following:
+        <b></b>
+        <ol>
+            <li><b>Effort at Management Phase = (10 * Total Effort) / 100</b></li>
+            <li><b>Effort at Requirement Phase = (12 * Total Effort) / 100</b></li>
+            <li><b>Effort at Design Phase = (22 * Total Effort) / 100</b></li>
+            <li><b>Effort at Implementation Phase = (32 * Total Effort) / 100</b></li>
+            <li><b>Effort at Deployment Phase = (24 * Total Effort) / 100</b></li>
+        </ol>
+
+
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="34">34. How to calculate Total Development Time  for Post Architecture Model COCOMO II?</a></h3>
+    <p>
+        The Development Time will be calculated in months by using this formula:<br />
+
+        <b> Development Time = 3 * (Effort) ^ (0.33 + 0.2 * (Scaling Factor - 1.01))</b><br /><br />
+        where '3', '0.33', '0.2', and '1.01' are the constant values, Effort and Scaling Factor are calculted above.<br />
+
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="35">35. How to calculate Process Productivity?</a></h3>
+    <p>Process Productivity is calculated by Application Type as following:
+    <ol>
+        <li>Microcode</li>
+        <li>Firmware (ROM)</li>
+        <li>Real-time embedded</li>
+        <li>Radar Systems</li>
+        <li>Command and Control</li>
+        <li>Process Control</li>
+        <li>Telecommunications</li>
+        <li>System Software</li>
+        <li>Business Systems</li>
+    </ol>
+
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="36">36. How to calculate Development Time for SLIM?</a></h3>
+    <p>Development Time for SLIM is not calculated it is taken by the user.</p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="37">37. How to calculate Total Effort for SLIM?</a></h3>
+    <p>
+        The Total Effort will be calculated in person-month using this formula:<br />
+        <b>Total Effort=(LOC / (C * t ^ 4/3)) ^ 3</b>
+        <br />
+        where Total Effort calculated in person-year, Size in LOC, 'C' is the process productivity parameter, 't' is development time in years, and '4/3' is the constant value.
+        
+
+
+
+
+
+
+    </p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="38">38. How to calculate Effort at Delivery Time for SLIM?</a></h3>
+    <p>The Effort at Delivery Time will be calculated in person using this formula:</p><br />
+    <b>Effort at Delivery Time = 0.3935 * Total Effort</b><br />
+    where 0.3935 is the constant value and Total Effort is calculated above.
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="39">39. How to calculate Manpower Build Up Equation for SLIM?</a></h3>
+    <p>The Manpower Build Up Equation will be calculted as:</p><br />
+    <b>Manpower Build Up Equation = Total Effort / Development Time ^ 3</b><br />
+    where Total Effort Calculated above, Development Time taken by the user and '3' is a constant value.
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="40">40. How to calculate Cost for all techniques?</a></h3>
+    <p></p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="41">41. How many techniques i can use at a time?</a></h3>
+    <p>At a time you can use one technique.</p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="42">42. What does mean by person-month unit?</a></h3>
+    <p>Product of Effort and Development Time.</p>
+    <img src="~/img/faq/person-month.gif" border="0" height="230" width="400" />
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="43">43. What does mean by KLOC?</a></h3>
+    <p>Diveding with 1000 to LOC called KLOC.</p>
+
+    <b>KLOC = LOC / 1000</b>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="44">44. What does mean by SLOC?</a></h3>
+    <p>SLOC is stands for Sources line of code. Total no of lines in a project.</p>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+    <br />
+    <br />
+    <hr>
+    <h3><a class="anchor" name="45">45. What does mean by Staffing?</a></h3>
+    <p>Dividing Effort into Development time brought staffing in persons as:</p>
+    <b>Staffing = Effort / Development Time</b>
+    <h5><a href="#top">Back to Top</a></h5>
+
+
+
+
+
+
+
+
+    <br>
+</div>
+

@@ -1,0 +1,376 @@
+﻿@model Software_Project_Estimation_Tool.Areas.COCOMOI.Models.CostDriversModel
+@{
+    ViewBag.Title = "CostDrivers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //if (Session["Technique"] == null || Session["Stage"] == null)
+    //{
+    //    Response.Redirect("~/Home/Index");
+    //}
+}
+
+
+<style>
+    .panel-default {
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    .panel-body {
+        color: #000000;
+        padding:15px;
+        height:390px;
+        
+
+    }
+
+    .btn-sm {
+        width:80%;
+    }
+     
+
+</style>
+
+
+
+
+
+<div class="jumbotron-m">
+
+
+    <header>
+
+        <h2><b>EFFORT ADJUSTMENT FACTOR (@Session["Stage"])</b></h2>
+        <h4><i>Please rate the following cost drivers according to your project specifications.</i></h4>
+    </header>
+
+    
+
+    <br />
+    @using (Html.BeginForm())
+    {
+
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <div style="color:#1E5472; text-align:center;"><h4><b>PRODUCT ATTRIBUTES</b></h4></div>
+                    <hr />
+
+
+                    <table class="table table-responsive table-borderless">
+
+                        <tr>
+
+
+                            <th> <h5 class=""><b> <i>Cost Drivers</i> </b></h5></th>
+                            <th> <h5 class="text-center"><b><i>Weights</i></b></h5> </th>
+
+
+                        </tr>
+
+                        <tr>
+
+                            <td class="text-small" title="Reliability">RELY</td>
+                            <td class="inLine">
+                                @Html.DropDownListFor(m => m.RELY_VALUE, Model.RELY, "Select", new { @class = "btn btn-default btn-sm" })
+                                @Html.ValidationMessageFor(m => m.RELY_VALUE, "", new { @class = "text-error" })
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td class="text-small" title="Database size">DATA</td>
+                            <td class="inLine">
+                                @Html.DropDownListFor(m => m.DATA_VALUE, Model.DATA, "Select", new { @class = "btn btn-default btn-sm" })
+                                @Html.ValidationMessageFor(m => m.DATA_VALUE, "", new { @class = "text-error" })
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td class="text-small" title="Product Complexity">CPLX</td>
+                            <td class="inLine">
+                                @Html.DropDownListFor(m => m.CPLX_VALUE, Model.CPLX, "Select", new { @class = "btn btn-default btn-sm" })
+                                @Html.ValidationMessageFor(m => m.CPLX_VALUE, "", new { @class = "text-error" })
+                            </td>
+
+                        </tr>
+
+
+                    </table>
+                   
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+        <div class="col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <div style="color:#1E5472; text-align:center;"><h4><b>PLATFORM ATTRIBUTES </b></h4></div>
+                    <hr />
+
+
+                    <table class="table table-responsive table-borderless">
+
+
+
+                        <tr>
+
+
+
+                            <th> <h5 class=""><b> <i>Cost Drivers</i> </b></h5></th>
+                            <th> <h5 class="text-center"><b><i>Weights</i></b></h5> </th>
+
+
+                        </tr>
+
+                        <tr>
+
+                            <td class="text-small" title="Execution time and Constraint">TIME</td>
+                            <td class="inLine">
+                                @Html.DropDownListFor(m => m.TIME_VALUE, Model.TIME, "Select", new { @class = "btn btn-default btn-sm" })
+                                @Html.ValidationMessageFor(m => m.TIME_VALUE, "", new { @class = "text-error" })
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td class="text-small" title="Main Storage Constraint">STOR</td>
+                            <td class="inLine">
+                                @Html.DropDownListFor(m => m.STOR_VALUE, Model.STOR, "Select", new { @class = "btn btn-default btn-sm" })
+                                @Html.ValidationMessageFor(m => m.STOR_VALUE, "", new { @class = "text-error" })
+
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td class="text-small" title="Virtual Machine Volatility">VIRT</td>
+                            <td class="inLine">
+                                @Html.DropDownListFor(m => m.VIRT_VALUE, Model.VIRT, "Select", new { @class = "btn btn-default btn-sm" })
+                                @Html.ValidationMessageFor(m => m.VIRT_VALUE, "", new { @class = "text-error" })
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td class="text-small" title="Computer Turnaround Time ">TURN</td>
+                            <td class="inLine">
+                                @Html.DropDownListFor(m => m.TURN_VALUE, Model.TURN, "Select", new { @class = "btn btn-default btn-sm" })
+                                @Html.ValidationMessageFor(m => m.TURN_VALUE, "", new { @class = "text-error" })
+
+                            </td>
+
+
+                        </tr>
+
+                    </table>
+                    
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+            <div class="col-lg-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <div style="color:#1E5472; text-align:center;"><h4><b>PERSONNEL ATTRIBUTES</b> </h4></div>
+                        <hr />
+
+
+
+                        <table class="table table-responsive table-borderless">
+
+                            <tr>
+
+
+                                <th> <h5 class=""><b> <i>Cost Drivers</i> </b></h5></th>
+                                <th> <h5 class="text-center"><b><i>Weights</i></b></h5> </th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="text-small" title="Analyst Capability">ACAP</td>
+                                <td class="inLine">
+                                    @Html.DropDownListFor(m => m.ACAP_VALUE, Model.ACAP, "Select", new { @class = "btn btn-default btn-sm" })
+                                    @Html.ValidationMessageFor(m => m.ACAP_VALUE, "", new { @class = "text-error" })
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="text-small" title="Application Experience">AEXP</td>
+                                <td class="inLine">
+                                    @Html.DropDownListFor(m => m.AEXP_VALUE, Model.AEXP, "Select", new { @class = "btn btn-default btn-sm" })
+                                    @Html.ValidationMessageFor(m => m.AEXP_VALUE, "", new { @class = "text-error" })
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="text-small" title="Programmer Capability ">PCAP</td>
+                                <td class="inLine">
+                                    @Html.DropDownListFor(m => m.PCAP_VALUE, Model.PCAP, "Select", new { @class = "btn btn-default btn-sm" })
+                                    @Html.ValidationMessageFor(m => m.PCAP_VALUE, "", new { @class = "text-error" })
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td class="text-small" title="Virtual Machine Experience">VEXP</td>
+                                <td class="inLine">
+                                    @Html.DropDownListFor(m => m.VEXP_VALUE, Model.VEXP, "Select", new { @class = "btn btn-default btn-sm" })
+                                    @Html.ValidationMessageFor(m => m.VEXP_VALUE, "", new { @class = "text-error" })
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="text-small" title="Language Experience">LEXP</td>
+                                <td class="inLine">
+                                    @Html.DropDownListFor(m => m.LEXP_VALUE, Model.LEXP, "Select", new { @class = "btn btn-default btn-sm" })
+                                    @Html.ValidationMessageFor(m => m.LEXP_VALUE, "", new { @class = "text-error" })
+
+                                </td>
+
+                            </tr>
+
+
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+                <div class="col-lg-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+
+                            <div style="color:#1E5472; text-align:center;"><h4><b>PROJECT ATTRIBUTES</b> </h4></div>
+                            <hr />
+
+
+                            <table class="table table-responsive table-borderless">
+
+                                <tr>
+
+
+                                    <th> <h5 class=""><b> <i>Cost Drivers</i> </b></h5></th>
+                                    <th> <h5 class="text-center"><b><i>Weights</i></b></h5> </th>
+
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="text-small" title="Modern Programming Practices">MODP</td>
+                                    <td class="inLine">
+                                        @Html.DropDownListFor(m => m.MODP_VALUE, Model.MODP, "Select", new { @class = "btn btn-default btn-sm" })
+                                        @Html.ValidationMessageFor(m => m.MODP_VALUE, "", new { @class = "text-error" })
+
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td class="text-small" title="Software Tools">TOOL</td>
+                                    <td class="inLine">
+                                        @Html.DropDownListFor(m => m.TOOL_VALUE, Model.TOOL, "Select", new { @class = "btn btn-default btn-sm" })
+                                        @Html.ValidationMessageFor(m => m.TOOL_VALUE, "", new { @class = "text-error" })
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td class="text-small" title="Development Schedule">SCED</td>
+                                    <td class="inLine">
+                                        @Html.DropDownListFor(m => m.SCED_VALUE, Model.SCED, "Select", new { @class = "btn btn-default btn-sm" })
+                                        @Html.ValidationMessageFor(m => m.SCED_VALUE, "", new { @class = "text-error" })
+
+                                    </td>
+
+                                </tr>
+
+
+                            </table>
+                            
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+        <hr />
+        <p> <input type="submit" value="Calculate" class="btn btn-fad btn-lg pull-right" /></p>
+
+
+        
+        }
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    </div>
+
+
+
+
+
+

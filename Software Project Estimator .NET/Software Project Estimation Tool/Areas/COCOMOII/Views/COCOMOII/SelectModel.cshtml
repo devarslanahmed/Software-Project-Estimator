@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "SelectModel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .btn-default {
+        width: 60%;
+        font-size: 17px;
+    }
+
+    .text-small {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    
+</style>
+
+
+<div class="jumbotron-n">
+    
+    <header>
+
+        <h2><b> SELECT MODEL </b></h2>
+        <h4><i> Select a model, according to your project type & requirements.</i></h4>
+
+    </header>
+
+    <br />
+    <br />
+
+
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="panel panel-default text-center">
+               
+                <div class="panel-body text-black">
+
+                    <h3 class="text-center text-brown"><b> APPLICATION COMPOSITION</b></h3>
+                    <hr />
+                    <p class="text-small">
+                        1. Use in early development stages. <br />
+                        2. Project build with modern GUI tools. <br />
+                        3. Intended for prototype projects, where the project is built by compsing components called 'Object Points'.
+                    </p>
+
+                </div>
+                <br />
+
+                <p class="text-center"> @Html.ActionLink("SELECT", "ApplicationCompositionModel", "COCOMOII", new { @class = "btn btn-default btn-brown" })</p>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+              
+                <div class="panel-body text-black">
+
+
+                    <h3 class="text-center text-brown"><b> EARLY DESIGN</b></h3>
+                    <hr />
+
+                    <p class="text-small">
+                        1. Use this model to get rough estimation of a project's cost and duration before determining its entire architecture.  <br />
+                        2. It uses a small set of new Cost Drivers and new estimating equations.<br />
+                    </p>
+
+                </div>
+                
+
+                <p class="text-center">  @Html.ActionLink("SELECT", "EarlyDesignModel", "COCOMOII", new { @class = "btn btn-default btn-brown" })</p>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                
+                <div class="panel-body text-black">
+
+                    <h3 class="text-center text-brown"><b> POST ARCHITECTURE</b></h3>
+                    <hr />
+
+                    <p class="text-small">
+                        1. This is the most detailed COCOMO II model.<br />
+                        2. It will be use after development of project's overall architecture.<br />
+                        3. It has new Cost Drivers, new Line Counting Rules and new Equations.
+                    </p>
+
+                </div>
+                
+                <p class="text-center">   @Html.ActionLink("SELECT", "PostArchitectureModel", "COCOMOII", new { @class = "btn btn-default btn-brown" })</p>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    
+
+
+</div>

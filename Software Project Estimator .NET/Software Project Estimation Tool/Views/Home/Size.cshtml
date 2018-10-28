@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Size";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+@using (Html.BeginForm())
+{
+
+<div class="jumbotron-o">
+
+    <header>
+
+        <h2 class="text-justify"><b>Project Size Estimation</b></h2>
+    </header>
+    <br />
+
+    <h4 class="text-justify">
+        The first step is to calculate software project size that will be used in further estimations i.e. Effort, Development Time, and Cost.<br />
+        There are following steps for size estimation for three Techniques, i.e. COCOMO I, COCOMO II, and SLIM.<br />
+
+    </h4>
+
+    <br />
+    <br />
+    <ol>
+        <li><b>Unadjusted Function Point</b></li>
+        <li><b>Value Adjustment Factor</b></li>
+        <li><b>Language Factor</b></li>
+    </ol>
+
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <hr />
+
+
+    @Html.ActionLink("Start Size Estimation", "UnadjustedFunctionPoints", "Home", new { @class = "btn btn-lg btn-fad4 pull-right" })
+
+    <br />
+    <br />
+    <br />
+</div>
+
+}
+
+

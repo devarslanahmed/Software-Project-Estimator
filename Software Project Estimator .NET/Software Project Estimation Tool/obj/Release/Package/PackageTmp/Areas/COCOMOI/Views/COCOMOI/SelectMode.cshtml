@@ -1,0 +1,196 @@
+﻿
+@{
+    ViewBag.Title = "SelectMode";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //if (Session["Stage"] == null)
+    //{
+    //    Response.Redirect("~/Home/Index");
+    //}
+}
+
+<style>
+    .btn-default {
+        width: 60%;
+        font-size: 17px;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    .text-small {
+        width: 100%;
+    }
+</style>
+
+
+
+<div class="jumbotron-m">
+
+
+
+
+
+    <header style="margin-left:0;">
+        <h2>
+            <b>SELECT MODE</b>
+        </h2>
+
+        <h4><i>Please select a mode, according to your project type and requirements.</i></h4>
+    </header>
+
+
+
+    <br />
+    <br />
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+
+                <div class="panel-body text-black">
+
+                    <h3 class="text-center text-blue"><b> ORGANIC MODE </b></h3>
+
+                    <hr />
+                    <p class="text-small ">
+                        1. Size of team is relatively small. <br />
+                        2. Project deals with developing a well-understood application program. <br />
+                        3. Team members are experienced developing similar types of project.
+                    </p>
+
+
+
+                </div>
+
+                @if (@Session["Stage"].ToString() == "Basic Stage")
+                {
+
+                    <p class="text-center"> @Html.ActionLink("SELECT", "XBasicStage", "COCOMOI", new { Mode = "Organic Mode", a = 2.4, b = 1.05, c = 2.5, d = 0.38 }, new { @class = "btn btn-default btn-blue" })</p>
+
+                }
+                else if (@Session["Stage"].ToString() == "Intermediate Stage")
+                {
+
+                    <p class="text-center"> @Html.ActionLink("SELECT", "CostDrivers", "COCOMOI", new { Mode = "Organic Mode", a = 3.2, b = 1.05, c = 2.5, d = 0.38 }, new { @class = "btn btn-default btn-blue" })</p>
+
+                }
+                else if (@Session["Stage"].ToString() == "Advanced Stage")
+                {
+
+                    <p class="text-center"> @Html.ActionLink("SELECT", "CostDrivers", "COCOMOI", new { Mode = "Organic Mode", a = 3.2, b = 1.05, c = 2.5, d = 0.38 }, new { @class = "btn btn-default btn-blue" })</p>
+
+                }
+
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+
+                <div class="panel-body text-black">
+
+
+
+                    <h3 class="text-center text-blue"><b>SEMIDETACHED MODE</b></h3>
+
+                    <hr />
+                    <p class="text-small">
+                        1. Development consist of a mixture of experienced and inexperienced staff. <br />
+                        2. Team member may have limited experience on related system but may be unfamiliar with some aspects of the system being developed.
+                    </p>
+
+
+                </div>
+
+
+                @if (@Session["Stage"].ToString() == "Basic Stage")
+                {
+
+                    <p class="text-center"> @Html.ActionLink("SELECT", "XBasicStage", "COCOMOI", new { Mode = "Semi-detached Mode", a = 3.0, b = 1.12, c = 2.5, d = 0.35 }, new { @class = "btn btn-default btn-blue" })</p>
+
+                }
+                else if (@Session["Stage"].ToString() == "Intermediate Stage")
+                {
+
+                    <p class="text-center"> @Html.ActionLink("SELECT", "CostDrivers", "COCOMOI", new { Mode = "Semi-detached Mode", a = 3.0, b = 1.12, c = 2.5, d = 0.35 }, new { @class = "btn btn-default btn-blue" })</p>
+
+                }
+                else if (@Session["Stage"].ToString() == "Advanced Stage")
+                {
+
+                    <p class="text-center"> @Html.ActionLink("SELECT", "CostDrivers", "COCOMOI", new { Mode = "Semi-detached Mode", a = 3.0, b = 1.12, c = 2.5, d = 0.35 }, new { @class = "btn btn-default btn-blue" })</p>
+
+                }
+
+
+
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+
+                <div class="panel-body text-black">
+
+                    <h3 class="text-center text-blue"><b> EMBEDDED MODE </b></h3>
+                    <hr />
+
+                    <p class="text-small">
+                        1. Complex hardware and software systems.<br />
+                        2. Team members may not have deep application experience.
+                    </p>
+
+
+
+                </div>
+                <br />
+                <br />
+
+
+                @if (@Session["Stage"].ToString() == "Basic Stage")
+                {
+
+                    <p class="text-center"> @Html.ActionLink("SELECT", "XBasicStage", "COCOMOI", new { Mode = "Embedded Mode", a = 3.6, b = 1.20, c = 2.5, d = 0.32 }, new { @class = "btn btn-default btn-blue" })</p>
+
+                }
+                else if (@Session["Stage"].ToString() == "Intermediate Stage")
+                {
+
+                    <p class="text-center"> @Html.ActionLink("SELECT", "CostDrivers", "COCOMOI", new { Mode = "Embedded Mode", a = 2.8, b = 1.20, c = 2.5, d = 0.32 }, new { @class = "btn btn-default btn-blue" })</p>
+
+                }
+                else if (@Session["Stage"].ToString() == "Advanced Stage")
+                {
+
+                    <p class="text-center"> @Html.ActionLink("SELECT", "CostDrivers", "COCOMOI", new { Mode = "Embedded Mode", a = 2.8, b = 1.20, c = 2.5, d = 0.32 }, new { @class = "btn btn-default btn-blue" })</p>
+
+                }
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+
+
+
+
+
+
+
